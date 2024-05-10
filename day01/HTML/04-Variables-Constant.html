@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        /* JavaScript te değişken veya sabit tanımlamak için 3 farklı ifade kullanılır
+        1-var---Değişken--Kullanmamak daha iyidir Çünkü var ile değişken tanımlandığında, aynı isimde başka bir değişken tanımlanmasına izin verir.Bu da hatalara neden olabileceği için kullanmamak dahi iyi olacaktır
+        2-let--Değişken--ES6 ile birlikte geldi
+        3-const--Sabit--ES6 ile birlikte geldi
+        */
+        let name = "Abdullah";
+        console.log(name);  //Abdullah
+
+        name = "Tarik";
+        console.log(name);//Tarik---bir değişkene verilen değer daha sonra değiştirilebilir
+
+        let _surname = "Caliskan";
+        console.log(_surname);  //Caliskan   _ ile başlayan değişken isimleri tanımlanabilir
+
+        const $tcNo = "12345678910";
+        console.log($tcNo);   //12345678910---$ ile başlayan değişken isimleri tanımlanabilir
+        // $tcNo ="98765432112";  04-Variables-Constant.html:24 Uncaught TypeError: Assignment to constant variable.  const değişkeni sabittir değeri değiştirilemez 
+
+        //Variable lar isimlendirilirken isimlendirme kuralların uyulmalıdır
+        /* Değişken isimlendirilirken hem harfler hem de sayılar kullanılabilir Ancak sayılar başa gelmez Örneğin sayi1 doğru bir isimlendirmeyken 1sayi doğru bir isimlendirme değildir
+    
+        Değişken isimlendirilirken alt tire (_ ve $) kullanılabilir. Ancak boşluk ve diğer özel karakterler (?,%,!, ., + vb.) kullanılmaz. Örneğin ev adresi ya da kimlik%no gibi değişken isimleri kurallara aykırı olduğundan hataya neden olacaktır.
+    
+        Değişken isimlendirilirken özel kullanım için ayrılmış olan
+        if , for , true vb. ifadeler kullanılmamalıdır.
+    
+       İngiliz alfabesinde bulunmayan karakterler ç,ğ,ı,ö,ş,ü ) kullanılamaz. */
+
+
+    </script>
+
+</body>
+
+</html>

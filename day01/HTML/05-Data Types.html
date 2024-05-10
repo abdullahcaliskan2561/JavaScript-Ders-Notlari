@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        /* Primitive Data Types */
+
+        //String---Metinsel ifadeleri içerisinde tutar Java da string non-primitive data türü iken JS de primitive data türüdür.
+        //String
+        let name = "Abdullah";
+        console.log(name);   //Abdullah
+
+        //Number
+        let number = 1040;
+        console.log(number);  //1040
+
+        //BigInt
+        let bigNumber = 1234n;   //ES11 ile birlikte geldi
+        console.log(bigNumber);  //1234n
+
+        //Boolean
+        let isWorking = true;
+        console.log(isWorking);  //true
+        let isRetired = false;
+        console.log(isRetired);  //false
+
+        //undefined
+        let age;
+        console.log(age);  //undefined---Daha sonra buna istenirse bir değer ataması yapılabilir
+        age = 45;
+        console.log(age);   //45
+
+        //null
+        let car = null;
+        console.log(car);  //null---Daha sonra buna istenirse bir değer ataması yapılabilir
+        car = "Toyota";
+        console.log(car);  //Toyota
+
+        //Symbol
+        let id = Symbol("id");
+        console.log(id);  //Symbol(id)---Console da kırmızı renkli olarak çıktısı görünüyor
+
+        //float
+        let piNumber = 3.14;
+        console.log(piNumber);  //3.14
+
+
+
+
+        /* Non-Primitive Data Types */
+
+        //Object
+        //Array
+        //Function
+
+        //Primitive data type lar stack memory de tutulur Non-primitive data type ların ise  referans değerleri stack  memory de tutulur ve bu referanslar heap memory yi işaret eder ve non-primitive data type ların deperleri  bu heap memort içerisinde tutulur.  
+
+        //Array
+        let arr = ["Abdullah", "Caliskan"];
+        console.log(arr); //Array(2)0: "Abdullah"1: "Caliskan"length: 2[[Prototype]]: Array(0)
+
+        //Object
+        const person = {
+            name: "Abdullah",
+            age: 25,
+            country: "Turkey",
+        }
+        console.log(person);  //{name: 'Abdullah', age: 25, country: 'Turkey'}
+
+
+
+
+
+
+            ;
+    </script>
+
+</body>
+
+</html>
