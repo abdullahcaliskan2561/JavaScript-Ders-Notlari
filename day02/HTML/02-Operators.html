@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+        let a = 5;
+        let b = 2;
+        console.log(a + b);//7
+        console.log(a - b);//3
+        console.log(a * b);//10
+        console.log(a / b);//2.5
+        console.log(a ** b);//25
+
+        //concatenation
+        let c = "10"
+        console.log(c + a); //105 Burada  string ile toplama yaptığımızda concat işlemi yaptı ve 10 ile 5 i yan yana yazdırdı Toplama yapıp 15 yapmadı Bu durum için şu cümleyi kullanabiliriz "STRING IS STRONG ANOTHER" String diğerlerinden güçlüdür ve onları da kendine benzetir
+
+        let name = "Abdullah";
+        let surname = "Caliskan";
+
+        console.log(name + " " + surname);  //Abdullah Caliskan
+        console.log(name, surname);  //Abdullah Caliskan
+        console.log(name, surname, city = "Trabzon", true);  //Abdullah Caliskan Trabzon true
+
+        //modulus
+
+        console.log(123 % 10); //3---Modulus on bize birler basamağını verir
+        let no = 123;
+        console.log(no % 2 == 0);//false---Bir sayinin 2 ye bölümünden kalan 0 değilse     veya kalan 1 ise o sayi tek sayidir.
+        //Bir sayinin ikiye bölümünden kalan  sıfır a eşit ise o sayi çift sayidir
+        //Yine modulus ile bir sayinin başka bir sayiya tam bölünüp bölünememe durumunu kontrol edebiliriz 
+        console.log(no % 7 ==0);  //False---Bu sayi 7 ye tam bölünemez
+
+
+       let num1="5";
+       let num2=3;
+       console.log(num1+num2);//53---Burada CONCAT yapar
+       console.log(num1-num2);//2---Burada normal çıkarma işlemi yapar
+       console.log(num1*num2);//15---Burada normal çarpma işlemi yapar
+       console.log(num1/num2);//1.66--Burada normal bölme işlemi yapar
+
+       //NOT:JS String ifadelerde toplama işlemi hariç normal matematik işlem yapar Toplama işleminde ise concat yapar
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

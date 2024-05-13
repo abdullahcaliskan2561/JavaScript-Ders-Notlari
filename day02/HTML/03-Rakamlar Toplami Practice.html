@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakamlar Toplami Practice</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+        //Verilen bir sayinin rakamlarının toplamını bulunuz
+        let num = 123;
+
+        let sum = 0;
+
+        let birlerBasamagi = num % 10;
+        console.log(birlerBasamagi);//3---3 sayisini aldık
+        sum += birlerBasamagi;
+        console.log(sum);//3---Bulduğumuz birler basamağını sum a ekledik
+
+        let onlarBasamagi = (num / 10) % 10;
+        console.log(onlarBasamagi);//2.30
+        sum+=onlarBasamagi;//Onlar basamağını sum a ekledik
+         console.log(sum);//5,30---Bulduğumuz birler basamağını sum a ekledik
+
+         let yüzlerBasamagi=(num/100)%10;
+         console.log(yüzlerBasamagi);//1,23
+         sum+=yüzlerBasamagi;
+         console.log(sum);//Toplamı 6,53 olarak bulduk Ancak virgüllü kısmı atmak için toFixed methodunu kullanarak virgüllü kısmı düzenliyoruz
+         console.log(Math.floor(sum));  //6---Rakamlar toplamı 
+
+         //NOT:
+         //floor methodu alta yuvarlar 
+         //ceil methodu üste yuvarlar
+
+
+    </script>
+
+</body>
+
+</html>

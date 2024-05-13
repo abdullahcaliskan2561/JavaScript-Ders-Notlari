@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>var and let</title>
+</head>
+
+<body>
+
+
+    <script>
+        /* Var kendini global scope da tanımlıyor ve bundan dolayı aynı isimle birden fazla variable tanımlamamıza izin verir ve bu da karışıklıklara neden olabilir Ancak ES 6 ile birlikte gelen let buna izin vermez Aynı şekilde const da buna izin vermez */
+        var degisken = "20";
+        console.log(degisken, typeof (degisken));  //20 string
+
+        var degisken = 20;
+        console.log(degisken, typeof (degisken));  //20 number
+
+        var degisken = true;
+        console.log(degisken, typeof (degisken));   //true boolean
+
+        //let degisken  ----'degisken' has already been declared(at 01 -var and let .htm28:14)
+
+
+        let sayi;
+        sayi = "25";
+        console.log(sayi, typeof (sayi));  //25 string
+        sayi = "45";
+        console.log(sayi);  //45 daha sonradan da değer ataması yaparak değerini değiştirebiliriz 
+
+
+        //const number;   ------Missing initializer in const declaration---Const a değer atamadan aşağı geçemeyiz değer atamamız gerekiyor
+
+        const number = 123;
+        console.log(number);  //123
+        // number=456;--- Uncaught TypeError: Assignment to constant variable.---Yeni değer atanmasına izin vermez
+        //Aynı şekilde
+        //var number =756;--- Uncaught SyntaxError: Identifier 'number' has already been declared---var ile const a verdiğimiz isimde değişken oluşturmak istersek yine buna izin vermez
+
+        /* Aynı scope içerisinde const ve let ile aynı isime sahip birden çok değişken tanımlanamaz */
+
+
+
+        //Variable
+        let a ="Hello";
+        console.log(a);//Hello
+
+        //Empty
+        let b ="";
+        console.log(b); // Hiçlik Konsolda bir çıktı görünmez 
+
+        //Null
+        let c =null;
+        console.log(c); //null
+
+        //Undefined
+        let d;
+        console.log(d);  //undefined
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
