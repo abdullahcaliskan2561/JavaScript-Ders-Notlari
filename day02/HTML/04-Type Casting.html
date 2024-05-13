@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Casting</title>
+</head>
+<body>
+
+
+
+
+    <script>
+        let a ="123";
+        console.log(a+15);      //12315
+        console.log(Number(a)+15);  //138---Number()-->Bir değişkenin içerisindeki değeri number a çevirir
+
+        let b ="Javascript";
+        console.log(Number(b));   //NaN
+
+        let c=5400;
+        console.log(c+15);   //5415
+        console.log(String(c)+15);  //540015  ---String()--->Bir değişkenin içerisindeki değeri String e çevirir.
+
+
+        //Kullanıcından aldığınız 2 sayıyının toplamını ekrana yazdırınız
+
+        let num1= prompt("1.sayiyi giriniz");//12 girdiğiminiz düşünelim
+        console.log(num1,typeof num1);   //12 string
+        //Prompt ile aldığımız sayısal ifadenin string formatında geldiğini gördük O zaman bu string ifadeyi number a çevirelim ve sonucu görelim
+        num2=Number(num1);
+        console.log(num2,typeof num2);  //12 'number'
+
+
+        //PARSE INT methodu
+        /* parseInt methodu kendisine ondalıklı olarak verilen değerin ondalık kısmını siler ve kalan kısımdan yeni bir değişken oluşturarak döndürür parseınt() methodu veri türü ne olursa olsun girilen değeri number veri türüne dönüştürürYani bir string değer de girsek işlem sonucu number olacaktır */
+        let d="125.46";
+        console.log(parseInt(d));  //125
+        let e="Javascript";
+        console.log(parseInt(e));   //NaN
+
+    //PARSE FLOAT methodu
+    /* Kendisine parametre olarak verilen değerlere göre verilen değerleri ondalıklı sayı haline dönüştürür. Veri tipi ne olursa olsun veri tipini number a dönüştürür */
+        let f ="3.14";
+        console.log(f, typeof f);  //3.14 string
+        console.log(parseFloat(f));
+        console.log(typeof f);//string
+        console.log(f+3);
+
+
+
+        let g=5;
+        let h=7;
+        let isim="Abdullah";
+        console.log(Boolean(g));  //true
+        console.log(Boolean(h));  //true
+        console.log(Boolean(isim));   //true
+
+        //NOT
+        /* 0 , null , undefined , NaN ve "" boolean a çevrildiklerinde JS tarafından  false olarak kabul edilir */
+        
+
+
+    </script>
+    
+</body>
+</html>
