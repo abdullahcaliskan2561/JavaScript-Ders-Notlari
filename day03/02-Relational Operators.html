@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relational Operators</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+        let x = 10;
+        let y = "10";
+        let z = "10";
+
+        console.log(x == y);  //true----Double eşittir kıyaslamada sadece değerlere bakar
+        console.log(x === y); //false---Üç eşittir kıyaslamada hem değerlere hem de data type a bakar.
+        console.log(y === z); //true---Hem değerleri hem de data type ı eşit olduğu için true sonuç döndürdü
+        console.log(y !== z); //false--y ve z hem değer hem type olarak eşit olduğu için false döndürdü
+
+        let isWork = true;
+        console.log(!isWork);//false
+
+
+        let age = 34;
+        let k = 20;
+        console.log(age > k);//true
+        console.log(!(age > k));//false
+
+        //Karşılaştırma operatorlerinin sonucu TRUE veya FALSE döner
+        // ===  ve !==(ünlem ve double eşittir) hem  veriyi hem de veri tipini kontrol eder
+        // ==(Double eşittir) ve != (ünlem ve tek eşittir)  sadece  veriyi kontrol eder
+
+
+        //&& Operatoründe hepsi true olursa sonucu true dondürur Bir tane false olması sonucun false olmasına neden olur 
+        //  VE && işleminde ilk false değerin bulunması yeterlidir Diğerlerinin kontrolüne gerek yoktur.Bu sebeple ilk false olan değişkenin değeri döndürülür Hiçbiri false değilse en sondaki değişkenin değeri döndürülür .58.satırda && operatorü false bulamadığı için en sonda null olduğu için null yazdırdı
+        //&& operatorü FALSE i arar
+
+
+
+        // || Operatöründe ise bir tane true olması sonucun true olması için yeterlidir
+        // Veya || işleminde ilk true değerin bulunması yeterlidir Diğerlerinin kontrolüne gerek yoktur.Bu yüzden  ilk true olan değişkenin değeri döndürülür.Hiçbiri true degilse en sondaki değer döndürülür.59 ve 60 satırdaki örnekler
+        //|| operatorü TRUE yi arar
+
+        // 0 , FALSE , NULL ,UNDEFINED , "" , ve NaN dışındaki durumlar TRUE kabul edilir
+
+        let a = true;
+        let b = false;
+        console.log(a && b);//false
+        console.log(a || b);//true 
+
+        let c = true;
+        let d = null;
+        let e =false;
+        console.log(c && d); //null
+        console.log(c || d); //true
+        console.log(e || d); //nul
+
+        let f =null;
+        console.log(!f);//true--null un değeri false olduğu için tersi true olur (48.satırdaki açıklama)
+
+
+
+    </script>
+
+</body>
+
+</html>

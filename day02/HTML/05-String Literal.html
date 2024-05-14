@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>String Literal</title>
 </head>
+
 <body>
 
 
@@ -17,16 +19,20 @@
     </ol>
 
     <script>
-        let a="Merhaba";
-        let b="JS";
+        let a = "Merhaba";
+        let b = "JS";
 
         console.log(`Yeni başlayanlar için ${b}'den herkese ${a} diyoruz`)
         //Yeni başlayanlar için JS'den herkese Merhaba diyoruz
 
+        //Metinleri daha dinamik bir şekilde birleştirmek için string şablonları (string literals) kullanabiliriz.Bu birleştirme işlemine de string interpolation denir
+        //String interpolation backtick ile yapılır
+        //Backtick multiline text tanımlamaya da izin verir
 
 
 
-        let desserts =`
+
+        let desserts = `
         <ol>
         Tatlilar
         <li>Baklava</li>
@@ -36,8 +42,9 @@
     </ol>
         `
         console.log(desserts);//Console da sonuçları aynı şekilde görürüz
-        
+
     </script>
-    
+
 </body>
+
 </html>

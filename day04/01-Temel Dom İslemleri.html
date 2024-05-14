@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temel Dom Islemleri</title>
+
+</head>
+
+<body>
+    <!-- classList--Bir elementin sahip olduğu class lari manipüle etmek için kullanilir
+    add--Elemente bir class eklemek için kullanilir
+    remove-- Elementin sahip olduğu bir class i kaldirmak için kullanilir------>
+
+    <h1 class="name">Abdullah Caliskan</h1>
+    <p class="mesaj"></p>
+
+
+    <h2 class="title "></h2>
+
+    <script>
+        //document.querySelector("name").innerText;
+        let isim = document.querySelector(".name").innerText;
+        console.log(isim);     //Abdullah Caliskan 
+
+        let mesaj1=document.querySelector(".mesaj").innerText=` Merhaba ${isim}`;
+        console.log(mesaj1);  //Merhaba Abdullah Caliskan
+
+        let mesaj2=document.querySelector(".mesaj").innerHTML=`<b> Merhaba ${isim} </b>`;
+        console.log(mesaj2);   //<b> Merhaba Abdullah Caliskan </b>
+    </script>
+
+
+</body>
+
+</html>

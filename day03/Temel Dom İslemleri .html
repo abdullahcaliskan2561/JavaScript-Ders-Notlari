@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temel DOM Islemleri</title>
+</head>
+
+<body>
+
+    <!-- Bir web sayfasındaki diğer tüm nesnelerin sahibi olan ana nesneye document
+    object denir. Document nesnesi web sayfamızı temsil eder. Eğer sayfa içindeki bir
+    nesneye erişmek istenilirse document nesnesi kullanılır. -->
+
+    <!--  document.querySelector(selector);
+    querySelector- - - -Selectorle eşleşen ilk elemanı seçer
+    selector- - - css selectorleri  kullanılır (.menu li)--menu isimli class ın içerisindeki ilk li yi seçer -->
+
+    <!-- document.querySelectorAll(selector)
+        querySelectorAll- - - Selektörle eşleşen tüm elemanları seçer ve bir DİZİ içerisinde döndürür
+    -->
+
+    <h1 class="title" style="color: red;text-align: center;">Welcome to <strong>DOM</strong> </h1>
+    <h2 class="title2" style="color: blue;text-align: center;">Welcome to DOM2 </h2>
+
+
+
+    <script>
+        //document.querySelector(".title");- - - title isimli class a sahip elementi seçiyoruz
+        //Daha sonra bu elementi bir değişlene atama yapıyoruz
+        let titleElement = document.querySelector(".title"); //Class ismini kullanarak çağırıyoruz
+        console.log(titleElement);  //Çıktıya dikkat edilirse bize elementin tamamını getirdi- - <h1 class="title" style="color: red;text-align: center;">Welcome to DOM</h1> 
+
+
+        //2.dom üzerinde müdahale edelim 
+
+        let titleElement2 = document.querySelector(".title2");
+        console.log(titleElement2.style = "color :green")  //Başlangıçta rengi mavi idi ve biz yeşile çevirdik Ancak başlangıçta text-align: center olmasına rağmen ve bu kısma müdahale etmememize rağmen yazı start olarak konumlandı 
+
+
+        //innetText---Bir elementin içindeki yazıyı okumak veya değiştirmek için kullanılır
+        // innerHTML---Bir elementin içindeki HTML’i okumak veya değiştirmek için kullanılır
+
+
+        //innerText
+        //Önce okuyalım sonra değiştirelim 
+        console.log(titleElement.innerText);      //Welcome to DOM
+        titleElement2.innerText ="Javasctipt te DOM islemleri";//Bu şekilde yazdığımızda ilgili kısmın içeriğini tamamem değiştirdik. Welcome to DOM2  nin yerine Javasctipt te DOM islemleri yazdık Şimdi bunu consolda görmek için değişkene atayalım ve yazdıralım
+        let a = titleElement2.innerText = "Javasctipt te DOM islemleri";
+        console.log(a);       //Javasctipt te DOM islemleri
+
+
+        //innerHTML
+         //Önce okuyalım sonra değiştirelim 
+         console.log(titleElement.innerHTML);      //Welcome to <strong>DOM</strong> 
+        titleElement.innerHTML="inner HTML e ekleme yapıldı";
+        let b = titleElement.innerHTML="inner HTML e ekleme yapıldı";
+        console.log(b);      //inner HTML e ekleme yapıldı
+
+
+
+        //NOT:innerText ile sadece içerikteki metni okuyabiliyoruz ve bir metin ekleyebiliyoruz innerHTML de ise hem yeni bir HTML elementi ekleyebiliyoruz hem de içerisindeki HTML leri okuyabiliyoruz 
+          
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
