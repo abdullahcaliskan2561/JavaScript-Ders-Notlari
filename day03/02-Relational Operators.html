@@ -63,6 +63,18 @@
         let f =null;
         console.log(!f);//true--null un değeri false olduğu için tersi true olur (48.satırdaki açıklama)
 
+        //Büyük eşit ve küçük eşit işlemlerinde veri tipi kontrolü yapılmıyor.
+
+
+        let p =false;
+        let r="false";
+        let s =true;
+         
+        console.log(r && s);   //true
+        console.log(s && r);   //false
+        console.log(r.value,typeof(r));   //undefined 'string'
+        console.log(s.value,typeof(s));   //undefined 'boolean'
+
 
 
     </script>

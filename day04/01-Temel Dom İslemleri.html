@@ -29,6 +29,26 @@
 
         let mesaj2=document.querySelector(".mesaj").innerHTML=`<b> Merhaba ${isim} </b>`;
         console.log(mesaj2);   //<b> Merhaba Abdullah Caliskan </b>
+
+
+
+        const yas =prompt("Yasinizi giriniz..");
+        console.log(yas);//45--Peki bunun tipine de bakalım 
+        console.log(typeof(yas));  //String --prompt ile alınan sayının data type ının string olduğunu görüyoruz Bu sayısal işlemlerde kullanmak için Number() a çevirmeliyiz
+
+
+        const result=Number("123abc");
+        console.log(result ,isNaN(result), typeof(result));  //NaN true 'number'  ---NaN bir hata değildir bir değerdir
+
+        //Number() ile değeri number a çeviremezse NaN hatası verir
+        //String() ile de değeri string e çevirir
+
+        //Farklı bir çevirme örneği aşağıdadır
+        let y=5 +""; //Stringe çevirme yöntemi--5 ile boş stringi toplayınca concat yapar ve y string olmuş olur
+        let z="15"*1; // Number a çevirme yöntemi--15 string olsa da js 1 ile çarpabilir ve sonucu number olarak verir
+        console.log(typeof(y));  //String
+        console.log(typeof(z));  //Number
+
     </script>
 
 
