@@ -41,6 +41,42 @@
        İngiliz alfabesinde bulunmayan karakterler ç,ğ,ı,ö,ş,ü ) kullanılamaz. */
 
 
+       //Value Type Variable larda değişkenin içerisinde o değer saklanır  let a=5--String-Number--BigInt ve Boolean;
+       //Referenbce Type Variable larda ise o değişkenin adresi-referans değeri saklanır let b={size:3, color :"red"}
+       //Value Type
+       let x =5;
+       let y=x;
+       console.log(x===y);//true
+
+       let a="Ali";
+       let b=a;
+       console.log(a===b);  //true
+       b="Veli";
+       console.log(a === b);   //false
+
+       //Reference Type--Object,Array
+       let c1={ cpu:"Intel",ram:"16gb",disk:"750gb"}
+       let c2={ cpu:"Intel",ram:"16gb",disk:"750gb"}
+       console.log(c1===c2); //false--Referansları-adresleri farklı olduğu için eşitlik kontrolünde hata verdi. 
+
+       let c3=c1;
+       console.log(c1===c3);//true
+       c1.cpu="AMD";
+      console.log(c1);  // { cpu: 'AMD', ram: '16gb', disk: '750gb' }
+      console.log(c3);  //{ cpu: 'AMD', ram: '16gb', disk: '750gb' } ---Referans kullanarak obje çoğaltırsak yeni obje oluşmaz var olanın kopyası oluşur 1 tane objedir bu aslında
+
+
+      console.log({}==={});  //false
+      console.log([]===[]);  //false 
+
+      console.log(typeof (null));  //object
+      console.log(null===null);    //true
+
+
+
+
+
+
     </script>
 
 </body>
