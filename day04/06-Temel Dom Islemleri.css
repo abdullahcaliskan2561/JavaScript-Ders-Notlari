@@ -1,0 +1,26 @@
+/* Buton un defaultaki görünümünü stillendirdik  */
+.toggle-btn{
+    background-color: black;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    font-size: 1.5rem; 
+    cursor: pointer;
+}
+/* Body ye dark olarak bir class veriyoruz ve onu stillendirerek dark mode un başlangıç default görünümünü ayarlıyoruz başlangıçta bu class ı  vermemiştik  */
+.dark{
+    background-color: black;
+    color: rgb(185, 179, 179);
+}
+/* Bu şekilde yapınca toggle butonla birlikte sayfa dark oldu ama toggle button içerisinin dark modda beyaz olması gerekiyor Şimdi toggle buton içerisini tekrar stillendirelim */
+.dark .toggle-btn{
+    background-color: white;
+    color: black;
+}
