@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Bir
+Textbox tan alınan fiyat bilgisi 500 den büyükse
+%10 indirim uygulayıp sonucu yazan, 300 den
+büyükse %7 indirip uygulayıp sonucu yazan,
+değilse %5 indirip uygulayıp sonucu yazan
+programı yapınız.
+ -->
+
+    <!-- İf li işlemlerde if ve else 1 defa kullanılır Ancak elseif birden çok sayıda kullanılabilir -->
+    <!-- İf bloklarından biri true olduğunda o if in içerisine girdiğinde diğer if blokları içerisine girmez -->
+
+    <input type="number" id="txtPrice" placeholder="Type the price">
+    <button onclick="setPrice()">Calculate</button>
+
+    <h2 id="result"></h2>
+
+    <script>
+        function setPrice(){
+            const txtPrice =document.querySelector("#txtPrice");
+            let result=txtPrice.value;
+
+            if(result>500){
+                result-=result*15/100;
+            }
+            else if(result>300){
+                result-=result*7/100;
+            }
+            else{
+                result-=result*5/100;
+            }
+            document.querySelector("#result").innerText= ` Urun fiyati ${result} TL`
+
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

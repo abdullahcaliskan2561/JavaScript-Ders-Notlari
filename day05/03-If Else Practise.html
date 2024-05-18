@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   <!--  Bir Textbox tan alınan fiyat bilgisi 500 den büyükse
+    %10 indirim uygulayıp sonucu yazan, değilse %5
+    indirip uygulayıp sonucu yazan programı yapınız.
+     -->
+
+    <input type="number" id="txtPrice" placeholder="Type the price">
+    <button onclick="setPrice()">Calculate</button>
+    
+    <h2 id="result"></h2>
+
+
+    <script>
+        function setPrice(){
+             const txtPrice=document.querySelector("#txtPrice");
+             let result=txtPrice.value;
+
+             if(result>500){
+                result-=result* 15/100;
+             }
+             else{
+                result-=result* 5/100;
+             }
+              document.querySelector("#result").innerText = ` Urun fiyati ${result} TL`
+        }
+
+    </script>
+
+
+
+</body>
+</html>

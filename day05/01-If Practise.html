@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="number" id="txtPrice" placeholder="Type the price">
+    <button onclick="setPrice()">Calculate</button>
+
+    <h2 id="result"></h2>
+
+    <!-- Bir Textbox tan alınan 500₺den büyük fiyatlar için %10 indirim uygulayan programı yapınız. -->
+
+    <script>
+        function setPrice(){
+         const txtPrice= document.querySelector("#txtPrice");  //1
+         let result=txtPrice.value;  //2- - Burada result a doğrudan atamamızın nedeni eğer değer if e girmezse yani 500den küçükse doğrudan değeri yazdırabileceğiz Ekstra bir 500 den küçük durumu için sorgulama yapmamız gerekmedi.
+
+         if(result >500){
+            result=result*0.85;   //3
+         }
+         document.querySelector("#result").innerHTML=` Urun fiyati ${result} TL`  //4
+         
+         
+        }
+
+    </script>
+    
+</body>
+</html>

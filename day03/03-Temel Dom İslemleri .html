@@ -18,7 +18,12 @@
     selector- - - css selectorleri  kullanılır (.menu li)--menu isimli class ın içerisindeki ilk li yi seçer -->
 
     <!-- document.querySelectorAll(selector)
-        querySelectorAll- - - Selektörle eşleşen tüm elemanları seçer ve bir DİZİ içerisinde döndürür
+        querySelectorAll- - - Selektörle eşleşen tüm elemanları seçer ve bir DİZİ içerisinde döndürür.Eşleşen ister 1 tane ister çok sayıda eleman olsun Sonucu DİZİ olarak döndürür Node List şeklinde 
+        document.querySelector(selector);- - - Elemanı bulamazsa null olarak sonuç verir.Elamanın olup olmadığını null sonucuna  göre anlayabiliriz
+        document.querySelectorAll(selector)- - - Elemanı bulamazsa yine dizi olarak Node List olarak sonuç döner ancak içi boş dizi olarak.Yani eleman olsa da olmasa da querySelectorAll her zaman dizi olarak döner Burada elemanın olup olmadığını anlamak için de dizi uzunluğu kontrol edilerek elemanın var olup olmadığı anlaşılabilir Dizi uzunluğu length sıfırdan büyükse en az bir eleman vardır demektir.
+
+
+
     -->
 
     <h1 class="title" style="color: red;text-align: center;">Welcome to <strong>DOM</strong> </h1>
