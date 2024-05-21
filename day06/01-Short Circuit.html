@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        const x=5;
+        const y=4;
+        const z=14;
+        //AND &&
+        console.log( x >y && z > y  &&y ==4 );  //true
+        console.log( x >y && z > y  &&y );  // sonuc y yani 4 olur - - && nin çalışma prensibi şudur && işlemi false arar ve ilk false bulduğunda false olarak yazdırır eğer false bulamazsa en sondaki değeri yazdırır burada hepsi true olduğu için en sondaki değer y yazdırıldı 4 olarak
+          console.log(x > y && y > z && y);//false - -İlk false i yazdırdı
+
+          console.log(z >5 && z < 25 && alert("Bravo super bir giriş"));// 17. satırdaki açıklama gereği sondaki alert yazdırıldı Bu ifadeyi if ile yazdırmak isteseydik şu şekilde olurdu
+
+          if(z > 5 && z < 25){
+            alert("Bravo super bir giriş if ile "); //- - Yani yukarıda daha clean bir kod yazılmış oldu
+          }
+
+
+          // OR ||
+          console.log( z< y || y > x || y > z ); //false
+          console.log( z< y || y > x ||  z );    //14
+          console.log( z< y || y > x ||  z );    //14 - -z gelir 14 olarak
+          console.log(z < y || x > y || z);   //true
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

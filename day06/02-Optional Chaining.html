@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Object yapılarında, object in olmayan elemanlarına erişim sağlandığında hata almamak için kullanılır
+-->
+
+
+
+    <script>
+
+        const user = {
+            name: "Abdullah",
+            age: 36,
+            salary: {
+                amount: 1000,
+                currency: 'Usd',
+                tax: 15
+            }
+
+        }
+        console.log(user);//Object olarak gelir
+        console.log(user.age); //36
+        console.log(user.salary);//{amount: 1000, currency: 'Usd', tax: 15}
+        console.log(user.salary.tax); //15
+        console.log(user.address);// Bu durumda address olmadığı için undefined verir
+        //console.log(addres.city);//Ancak bu şekilde olmayan bir şeyin içerisinde yani olmayan address içerisinden olmayan city çağrılırsa işte o zaman hata verir
+
+        //Bazen biz verileri dışardan alırız ve bu durumlarda gelen bütün veriler aynı olmayabilir Örneğin her verinin adresi olmayabilir ve bu da hata oluşmasına neden olabilir  İşte bunu önleyebilmek için Optional Chaining yapılır  Aslında biraz short circuit e benzer Şimdi aşağıda bakalım
+
+        console.log(user.address?.city); //undefined- - Bu şekilde address ten sonra soru işareti ekleyerek gelecek olan city nin olup olmadığı kesin değil bu konuda dikkatli ol diyoruz yani :) Ve sonuç olarak hata değil undefined geliyor
+
+        //Aynı şekilde
+        console.log(user.address?.city.name); //undefined
+
+        //Optional chaining den önce kullanılan yöntem
+        if(user.address){
+            console.log(user.address.city);
+        }
+
+
+
+    </script>
+</body>
+
+</html>
