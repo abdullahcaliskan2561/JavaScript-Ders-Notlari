@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Dikdörtgenin alanını bulan bir
+fonksiyona gönderilen kenar
+uzunluklarını nullish coalescing
+ile kontrol ederek default değer
+atayınız. -->
+
+<h1 id="result"></h1>
+
+<script>
+
+    function setArea(a, b){
+         //console.log(a, b);//Bu kod 32. satırdaki nedeni görmek için yazıldı
+        //const result = a* b ;//Şimdi bu const un nullish olarak düzenlemesini yapalım değer girilmeme durumunu göz önüne alarak - - Alt satırda
+        const result =(a ?? 0 ) * (b ?? 0) ;//Nullish coalescing  kullanarak a ya da b ye değer girilmemesi durumunda yani onlardan gelecek değerin null ya de undefined olması durumunda değerin sıfır olarak alınmasını default değer olarak atadık
+        return result ;
+        //Bunları yazmadan doğrudan return a*b yazarak da sonucu döndürebilirdik
+        //return a*b;
+
+    }
+     const area1=setArea(10 ,5);
+     console.log(area1);
+     document.querySelector("#result").innerText =`Dikdörtgenin alanı  :${area1}`
+
+     //Sorumuzla alakalı olarak dikdörtgenin alanı için parametre gönderilmediğini varsayalım
+     const  area2=setArea();
+     console.log(area2);  //Sonuç olarak NaN döndü Neden undefined döndüğüne bakalım - - 21 .satırda gördüğümüz gibi a ve b undefined değer aldığı için bunları çarpamadı ve NaN döndürdü
+
+    
+
+
+</script>
+    
+</body>
+</html>
