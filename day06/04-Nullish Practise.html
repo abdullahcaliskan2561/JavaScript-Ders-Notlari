@@ -17,25 +17,31 @@ atayınız. -->
 
 <script>
 
-    function setArea(a, b){
-         //console.log(a, b);//Bu kod 32. satırdaki nedeni görmek için yazıldı
-        //const result = a* b ;//Şimdi bu const un nullish olarak düzenlemesini yapalım değer girilmeme durumunu göz önüne alarak - - Alt satırda
-        const result =(a ?? 0 ) * (b ?? 0) ;//Nullish coalescing  kullanarak a ya da b ye değer girilmemesi durumunda yani onlardan gelecek değerin null ya de undefined olması durumunda değerin sıfır olarak alınmasını default değer olarak atadık
-        return result ;
-        //Bunları yazmadan doğrudan return a*b yazarak da sonucu döndürebilirdik
-        //return a*b;
-
+    // İlk olarak fonksiyonumuzu oluşturalım - -1
+    function setArea ( a , b) {
+     return a*b ;
     }
-     const area1=setArea(10 ,5);
-     console.log(area1);
-     document.querySelector("#result").innerText =`Dikdörtgenin alanı  :${area1}`
+    //2 Fonksiyonumuzu çağıralım ve değer verip bir değişkene atayarak sonucuna bakalım
+    setArea(10, 5);
+    const area1=setArea(10 ,5);
+    console.log(area1);  //50
 
-     //Sorumuzla alakalı olarak dikdörtgenin alanı için parametre gönderilmediğini varsayalım
-     const  area2=setArea();
-     console.log(area2);  //Sonuç olarak NaN döndü Neden undefined döndüğüne bakalım - - 21 .satırda gördüğümüz gibi a ve b undefined değer aldığı için bunları çarpamadı ve NaN döndürdü
+//3 Şimdi dikdötgenin köşeleri için değer girilmdeğini varsayalım yani a ve b degiskenlerini null olarak atayalım ve sonucu döndürelim
+
+const area2 = setArea();
+console.log(area2);//NaN- - a ve b ye değer girilmediğinde sonuç NaN olarak geldi Bunu engellemek için a ve b ye değer girilmediğinde default olarak 0 atanmasını nullish ile yapalım farklı bir örnek üzerinde
+
+function setArea2 (c , d){
+    return (c ?? 0) * (d ?? 0);    
+}
+setArea2(6 , 11);
+const area3=setArea2(6 , 11);
+console.log(area3);  //66 - - Normal çalışıyor Şimdi de a ve b degerine deger girilmediğini varsayalım ve sonuca bakalım
+const area4 =setArea2();
+console.log(area4);  //0- - Default olarak a ve be yi sifir alır ve sonuç sıfır olarak gelir Yukarda NaN olarak geldi Bunu nullish ile  düzeltmiş olduk
+
 
     
-
 
 </script>
     

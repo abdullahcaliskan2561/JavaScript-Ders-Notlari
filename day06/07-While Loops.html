@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Döngünün ne kadar döneceği döngü bloğunun içindeki kodlara bağlı ise bu durumda while
+     döngüleri kullanılabilir. Doğru olduğu sürece döngü tekrar -->
+
+
+     <!-- Practise -->
+     <!-- Bir
+textbox tan alınan sayının, sayı değerini
+hesaplayıp sonucu bir h3 içinde gösteren programı
+yapınız.
+8291 => 8+2+9+1 = 20
+PRACTISE -->
+
+<input type="number" id="txtNumber">
+<button onclick="calculate2()">Calculate</button>
+
+
+
+<script>
+
+    const txtNumber=document.querySelector("#txtNumber");
+
+    function calculate() {
+        let num=Math.abs(txtNumber.value) ;//Eksi girilmesi durumuna karşı mutlakdeğerini alıyoruz
+        let total =0;
+        while(num > 0) {
+            const digit =num % 10;
+            total = total + digit;
+            num = Math.floor(num / 10);                     
+        }
+        alert(total);
+
+    }
+
+
+
+    /* SUBSTRİNG YÖNTEMİ İLE ÇÖZÜMÜ */ 
+    /* Butonda calculate2() yi aktifleştiriyoruz calculate() kapatıldı   */
+    function calculate2() {
+        let num =  Math.abs(txtNumber.value) +"";//Burada math class ını kullandığımızda sayı geldiği için ve aşağıda da bu gelen sayının lenght ini alacağımız için hata verir Çünkü sayıların lenght i olmaz Onun için bu değeri yine string e çevirdik  +"" ekleyerek veya en başta string parantezina alarak da string e çevirebiliriz 
+        let total = 0;
+        let sayac =0;
+
+        while (sayac < num.length){
+           total += parseInt(num.substring(sayac , sayac+1));//Substring de ilk parametrede dahil ikinci parametre dahil değil 
+
+            sayac++;
+
+        }
+        alert(total);
+
+}
+</script>
+
+
+
+
+
+        
+
+    
+</body>
+</html>

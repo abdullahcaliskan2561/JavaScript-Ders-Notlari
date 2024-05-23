@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- En temel döngü türüdür 
+    Döngünün kaç defa döneceği programı yazarken development aşamasında belli ise for döngüsü kullanırız-->
+
+
+    <script>
+        for (let i = 0; i < 10; i++) {
+            console.log(i);  //1 2 3 4 5 6 7 8 9
+            //İlk ifade i=0 döngüye girmesini sağlar
+            //ikinci ifade i<10 döngüden çıkmayı sağlar
+        }
+
+        for (let i = 0; i < 10; i++) {
+            console.log("Hello");   //10 defa Hello yazdırır
+        }
+
+        for (let i = 0; i < 99; i += 3) {
+            console.log("Hi");    //33 defa Hi yazdırır
+        }
+
+        for (let i = 1; i >100 ; i++) {
+            console.log("Bye");    //Bu döngü hiç çalışmaz
+
+        }
+
+        //Kullanıcıdan 10 tane isim bilgisi alacağımızı düşünelim
+        for (let i =0; i<10 ;i++){
+            console.log(prompt("Adınızı giriniz ")) //Prompt 10 defa isim ister ve girilen isimleri console a yazdırır
+
+        }
+
+    </script>
+
+</body>
+
+</html>

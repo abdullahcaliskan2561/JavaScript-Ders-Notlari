@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <!--Bir
+ul listesinde ürün isimleri
+ve fiyat bilgileri
+bulunmaktadır. Textbox a
+girilen indirim oranı kadar
+listeye indirim uygulayan
+programı yazınız.  -->
+
+<div class="container">
+<h1 class="display-1 ">PRODUCTS</h1>
+
+    <form action="">
+        <div class="input-group  input-group-lg">
+            <span class="input-group-text" id="basic-addon1">%</span>
+            <input id="txtDiscount" type="text" class="form-control" placeholder="Discount Rate">
+            <button onclick="setPrices()" type="button" id="btnUpdate" class="btn btn-info">Update</button>
+            <!-- Burada button un type ına button yazmamız önemli Çünkü bootstrap butonları genellikle tıklandığında sayfayı yenileyerek işlem yapıyor Bunun önüne geçmek için bu şekilde type ="button" yaptık -->
+
+        </div>
+    </form>
+
+    <ul class="list-group mt-4" id="productList">
+        <li class="list-group-item d-flex justify-content-between align-items-start">Mainboard <span
+                class="badge bg-primary rounded-pill">$ <em>245</em> </span></li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">Graphic Card <span
+                class="badge bg-primary rounded-pill">$ <em>356</em></span></li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">Sound Card <span
+                class="badge bg-primary rounded-pill">$ <em>65</em></span></li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">Printer <span
+                class="badge bg-primary rounded-pill">$ <em>125</em></span></li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">Display <span
+                class="badge bg-primary rounded-pill">$ <em>245</em></span></li>
+    </ul>
+</div>
+
+     <!-- Burada ürün fiyatları da solda görünsün diye bu şekilde bootstraptan class kullandık
+    class="badge bg-primary rounded-pill
+ -->
+
+
+ <script>
+    const txtDiscountRate = document.getElementById('txtDiscount'); //İnput 
+   const productList =document.querySelectorAll("#productList li");
+
+
+    function setPrices() {
+      let discountRate= txtDiscountRate.value;
+      discountRate=(!discountRate || isNaN(discountRate) || discountRate >100|| discountRate <0) ? 0 : discountRate;  //Boşluk kontrolü- - Numara kontrolü- - Yüzden büyük olma ve küçük olma kontrolü yapıldı
+
+      
+
+        for (let i = 0; i < productList.length; i++) { 
+            const priceEl= productList[i].querySelector("span > em");
+            const price= priceEl.innerText;
+            //console.log(priceEl.innerText);
+            const updatedPrice=(price-price*discountRate/100).toFixed(0);
+            console.log(price,updatedPrice);
+            priceEl.innerText=updatedPrice;
+            
+             
+
+
+        
+    }
+}   
+
+
+
+
+ </script>
+
+
+
+
+
+
+</body>
+
+</html>
