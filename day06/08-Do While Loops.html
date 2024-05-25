@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!--     Do
+    while da kontrol sonda olduğu
+    için döngü içindeki kodlar en az
+    bir kere icra edilir. -->
+
+    <!-- do{
+          …
+         }
+         while(a<50);
+-->
+
+<!-- Textbox tan alınan sayının faktöriyelini bulan programı yapınız. -->
+
+
+<script>
+    function calculate(numParam) {
+        let  num= !numParam ||isNaN(numParam) || numParam < 0 ? 0 : numParam;
+        let faktoriel=1;
+        do {
+           faktoriel = faktoriel * num; 
+           num--;
+        } while (num > 0);
+        alert(faktoriel);
+
+    }
+    calculate(5);
+
+</script>
+
+
+</body>
+
+</html>
