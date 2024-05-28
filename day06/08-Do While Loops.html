@@ -9,10 +9,8 @@
 
 <body>
 
-    <!--     Do
-    while da kontrol sonda olduğu
-    için döngü içindeki kodlar en az
-    bir kere icra edilir. -->
+    <!--     Do while da kontrol sonda olduğu için döngü içindeki kodlar en az bir kere icra edilir. -->
+
 
     <!-- do{
           …
@@ -24,9 +22,16 @@
 
 
 <script>
-    function calculate(numParam) {
-        let  num= !numParam ||isNaN(numParam) || numParam < 0 ? 0 : numParam;
-        let faktoriel=1;
+    function calculate(num) {
+        num =num === 0 ? 1 : num ;  //Sıfır faktoriyel 1 olduğu için ozel bir kontrol yapıldı
+
+        if (!num || isNaN(num) || num < 0) {
+            alert("Negatif olmayan bir tamsayi  giriniz");
+            return;
+        }
+        let faktoriel =1 ;
+
+
         do {
            faktoriel = faktoriel * num; 
            num--;
@@ -34,7 +39,7 @@
         alert(faktoriel);
 
     }
-    calculate(5);
+    calculate(0);
 
 </script>
 

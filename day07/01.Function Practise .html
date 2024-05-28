@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!-- PRACTİSE
+    Bir sayının palindrome olup olmadığını bulan programı yapınız
+    -->
+
+    <label for="numberInput">Bir sayi giriniz</label>
+    <input type="number" id="numberInput">
+    <button onclick="checkPalindrome()">Kontrol Et</button>
+    <p id="result"></p>
+
+
+    <script>
+
+        function checkPalindrome() {
+            const num =document.getElementById('numberInput').value; //Inputtan sayıyi alıyoruz
+            const strNum =num.toString();  //Sayiyi ters çevirme işlemi yapabilmek için string tipine çeviriyoruz
+            const reversedStrNum =strNum.split('').reverse().join(''); //Stringi tersine cevirip birlestiriyoruz
+
+            const resultElement =document.getElementById('result');
+            if(strNum===reversedStrNum){
+                resultElement.innerText =`${num} palindrome bir sayıdır` 
+            }else{
+                 resultElement.innerText = `${num} palindrome bir sayı değildir` 
+            }
+
+        
+        }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!--PRACTISE 
+        Bir sayının asal olup olmadığını bulan fonksiyonu yazınız.
+ -->
+
+
+
+
+    <input type="number" id="txtNum">
+    <button onclick="calculate()">Calculate</button>
+    <p id="result"></p>
+
+    <input type="number" id="txtNum2">
+    <button onclick="calculate2()">Calculate2</button>
+    <p id="result2"></p>
+
+
+
+
+
+
+    <script>
+
+        function isPrimeNumber(num) {
+            if (!num || isNaN(num) || num < 2) return false;/* Eğer if in içerisinde tek satır varsa bu şekilde yapabiliyoruz */
+
+            let result = true;
+
+            for (let i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    result = false;
+                    break;
+                }
+            }
+            return result;/* Buraya kadar bağımsız olarak sadece bir sayının asal olup olmadığını kontrol eden fonksiyonu yazdık Şimdi bunu bizim buttonumuzdaki calculate fonksiyonuna bağlayalım */
+        }
+
+        /* Burada yazdığımız isPrimeNumber fonksiyonu generic bir fonksiyondur  Hiçbir yerle bir bağımlılığı yoktur ve sadece bir iş yapar Bir sayı alır onu kontrol eder ve asal olup olmadığını geri döndürür true veye false olarak döndürür */
+
+
+
+
+            function calculate() {
+                const inputNum = parseInt(document.querySelector("#txtNum").value);
+                const number =isPrimeNumber(inputNum);
+
+               const resultElement=  document.getElementById('result');
+
+               if(number){
+                   resultElement.innerText=inputNum + " Asal sayıdır";
+               }else{
+                   resultElement.innerText=inputNum + " Asal sayı degildir";
+               }
+
+            }
+
+            //Farklı bir şekilde calculate fonksiyonu şu şekilde yazabiliriz 
+
+            const txtNum=document.querySelector("#txtNum");
+
+            function calculate(){
+                const result =isPrimeNumber(txtNum.value);
+                alert (`The number you entered is ${result ? `Prime` : `Not Prime`}`)
+            }
+            /* $ ve köşeli parantez içerisine ternary yazabiliyoruz */
+
+
+            /* Buradaki calculate() fonksiyonu ise bir olay fonksiyonu- event handler dır Butona bağımlıdır Çalışabilmesi için butona basılmalıdır  JavaScript'te olay fonksiyonları, belirli olaylar meydana geldiğinde yürütülen fonksiyonlardır. Bu fonksiyonlar, kullanıcı etkileşimleri veya sayfa üzerinde gerçekleşen değişiklikler sonucunda tetiklenir. Olay işleyicileri, HTML elemanlarına doğrudan atanabilir veya JavaScript kullanılarak dinamik olarak eklenebilir. Bu sayede, web sayfalarında etkileşimli ve dinamik davranışlar oluşturulabilir.*/
+
+
+
+
+            //FARKLİ BİR ÇÖZUM DAHA
+
+            function calculate2(){
+                let num =Number(document.querySelector("#txtNum2").value);
+                 
+                let counter =0;
+
+                if( num >1 && Number.isInteger(num)){
+                    for(let i=2;i<num;i++){
+                        if(num%i==0){
+                            counter++;
+                        }
+                    }
+                    counter ==0 ? alert("Asal sayıdır") : alert("Asal sayı degildir"); 
+                }
+                else{
+                    alert("Lütfen geçerli bir sayi giriniz...");
+                }
+            }
+
+
+
+
+            /* 
+            1. Single Responsibility Principle (SRP) - Tek Sorumluluk Prensibi
+Prensip: Her modül veya sınıfın, sadece bir işlevi veya sorumluluğu olmalıdır. Bir modül veya sınıf, sadece bir nedenden dolayı değiştirilebilir olmalıdır.
+
+
+2. Open/Closed Principle (OCP) - Açık/Kapalı Prensibi
+Prensip: Yazılım varlıkları (sınıflar, modüller, fonksiyonlar vb.) genişletmeye açık olmalı, ancak değiştirilmeye kapalı olmalıdır. Yani, mevcut kod değiştirilmeden yeni işlevsellik eklenebilmelidir.
+
+
+3. Liskov Substitution Principle (LSP) - Liskov Yerine Geçme Prensibi
+Prensip: Bir alt sınıf, türetildiği üst sınıfın yerine geçebilmelidir. Alt sınıflar, üst sınıfların beklenen davranışlarını bozmayacak şekilde kullanılabilmelidir.
+
+
+4. Interface Segregation Principle (ISP) - Arayüz Ayrımı Prensibi
+Prensip: Müşteriler, kullanmadıkları arayüzlere bağımlı olmaya zorlanmamalıdır. Büyük arayüzler, daha spesifik ve küçük arayüzlere bölünmelidir.
+
+
+5. Dependency Inversion Principle (DIP) - Bağımlılıkların Ters Çevrilmesi Prensibi
+Prensip: Yüksek seviye modüller, düşük seviye modüllere bağımlı olmamalıdır. Her iki tür modül de soyutlamalara bağımlı olmalıdır. Soyutlamalar, ayrıntılara bağımlı olmamalıdır; ayrıntılar soyutlamalara bağımlı olmalıdır.
+
+
+Özet
+SRP (Single Responsibility Principle): Her fonksiyon veya modül, tek bir sorumluluğa sahip olmalıdır.
+OCP (Open/Closed Principle): Kod, genişletmeye açık ama değiştirmeye kapalı olmalıdır.
+LSP (Liskov Substitution Principle): Alt sınıflar, üst sınıfların yerine geçebilmelidir.
+ISP (Interface Segregation Principle): Kullanıcılar, ihtiyaç duymadıkları yöntemlerle karşı karşıya kalmamalıdır.
+DIP (Dependency Inversion Principle): Yüksek seviyeli modüller, düşük seviyeli modüllere bağımlı olmamalıdır.
+
+
+
+
+
+             */
+
+
+
+
+
+
+        
+            
+        
+
+    </script>
+
+</body>
+
+</html>

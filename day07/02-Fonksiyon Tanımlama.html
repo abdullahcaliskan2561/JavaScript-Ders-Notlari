@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <script>
+
+                  // Function Declaration yöntemi ile fonksiyon tanımlama
+                   // function declaration, tanımlandığı satırın üstünde çağrılabilir. Buna hoisting özelliği denir.
+
+        function yasHesapla(dogumTarihi) {
+                return 2022 - dogumTarihi;
+            }
+            yasHesapla();
+
+
+
+
+                  // Function Expression yöntemi ile fonksiyon tanımlama
+    const yasHesapla2 = function (dogumTarihi) {
+        return 2022 - dogumTarihi;
+    }
+    yasHesapla2();
+    /* Burada fonksiyonu bir değişkene atadık ve  değişken adı üzerinden fonksiyonu çağırıyoruz */
+
+
+        //Hoisting-------------Declarationda var-----Expressionde yok- - Fonksiyonu alt kısımda tanımlayıp o tanımlama kısmının üzerinde foknsiyonu çağırmadır Diğer yöntemlerde bu çalışmaz Yukardan aşağıya okuyarak geldiğinde ancak function decleration da bu hoisting yöntemi çalışır
+
+
+        //Anonymous Function(İsimsiz Fonksiyon)-- -Fonksiyon oluşturulurken bir isim verilmiyor-----Declarationda yok--------Expressionda var 
+
+
+        //Immediately Invoke Function(HEmen kendi kendini çağıran fonksiyonlar)------Declarationda yok--------Expressionda var
+
+
+        //Callback Function(Geriye çağrılan fonksiyonlar)------Declarationda yok--------Expressionda var
+
+
+
+
+        /* *********************************************************************** */
+
+                   //Arrow function  yöntemi ile fonksiyon tanımlama
+                   // Expression yönteminin biraz daha sade halidir
+                   // Arrow function, tanımlandığı satırın üstünde çağrılamaz.
+
+        const yasHasapla3 = (dogumTarihi ) => 2022- dogumTarihi;
+        let yas =yasHasapla3(1989);  
+         //Burada dikkat edilirse function kelimesi de yazılmadı
+         //Return kelimesi yerini => kullanıldı
+         //Eğer fonksiyon içeriği tek satır ise { } kullanmadan doğrudan değer döndürülebilir.
+
+         //NOT:Eğer fonksiyon içeriği tek satırdan oluşmuyorsa { } kullanılmalı ve return keyword u yazılarak döndürme işlemleri yapılmalıdır
+
+         const yasHesapla4 =(dogumTarihi) => {
+            if ( !dogumTarihi) return; 
+                return 2022-dogumTarihi ;
+            }
+             let yas2 = yasHesapla4(2000);
+
+
+
+
+
+
+             /* *********************************************************************** */
+
+             //Gördüğümüz 3 çeşit fonksiyon tanımlamaya bakalım
+
+             //1-ARROW FUNCTION
+             const topla = (a, b)  => a+b
+
+             //2-FUNCTION EXPRESSION
+             const topla2 =function (a ,b){
+                return a+b ;
+             }
+
+             //3-FUNCTION DECLARATION
+             function topla3(a, b) {
+                    return a+b;
+             }
+
+             const result1= topla(5, 6);
+             const result2= topla2(7, 6);
+             const result3= topla3(8, 6);
+             console.log(result1, result2, result3);  //11 13 14
+
+
+
+
+
+          
+         
+
+
+
+        
+
+
+
+
+
+    </script>
+     
+</body>
+</html>
