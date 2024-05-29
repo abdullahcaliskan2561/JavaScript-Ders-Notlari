@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <script>
+
+        //Değişken ve sabitlerin yaşam alanına scope denir
+
+        //Function scope--->Fonksiyon içinde tanımlanan değişkenler sadecefonksiyon içinde geçerlidir.
+
+        //Gloobal scope--->Her yerden erişilebilen değişkenlerdir, en tepede tanımlanır.
+
+        //Block scope--->Sadece tanımlandığı blok içinde( if , for , while …) geçerlidir.
+
+
+
+        
+            //Function scope
+            const fonk1 =function (){
+                let sayi1 = 22 ;
+                console.log(sayi1);  //22
+            }
+            fonk1();
+            //console.log(++sayi1); //Hata- -04-Scope.html:31 Uncaught ReferenceError: sayi1 is not defined- - Sayi1 fonksion içerisinde tanımlandığı için fonksiyon dışından erişilmeye çalışıldığında hata verir
+
+
+
+             //Global scope
+             let sayi2 =5;
+             const fonk2 =function(){
+                sayi2 =10 ;
+                console.log(`Fonksiyon içindeki sayi değişkeni ${sayi2}`);  //Fonksiyon içindeki sayi değişkeni 10
+             }
+             fonk2();
+             console.log(++sayi2);   //11- -  Sayi değişkeni fonksiyon dışında tanımlandığı için hem fonksiyon içinden hem de fonksiyon dışından erişilip değeri okunabilir ve değiştirilebilir
+
+
+
+             //Gloobal scope ve Function scope un birlikte kullanımı
+             let sayi3 = 3;
+             const fonk3 =function(){
+                let sayi3 = 7;
+                console.log(`Fonksiyon içindeki sayi3 ün sonucu--> ${sayi3}`);  //Fonksiyon içindeki sayi3 ün sonucu --> 7
+             }
+             fonk3();
+             console.log(`Fonksiyon dışındaki sayi3 ün sonucunun 1 artırılmış hali-->  ${++sayi3}`);  //Fonksiyon dışındaki sayi3 ün sonucunun 1 artırılmış hali -->  4
+             //Sonuç olarak hem global scope da hem de function scope da ayni isimli değişken tanımlanabilir ve bunlar farklı değişkenler olarakalgılanır Yukarıdakinden bir farkı şudur orada sayi2 let olmadan tanımlanmıştı Buradaki sayi3 ise let kullanılarak tanımlandığı için bunları farklı değişken olarak tanımlıyor Ancak aynı scope içerisinde aynı değişken oluşturulmasına izin vermez tabi ki 
+
+
+
+             //Block Scope
+
+             const fonk4 =function(sayi){
+                if(sayi<0){
+                    let negatif =true ;
+                }
+                //console.log(negatif);//Hata verir- ->Block scope değişkenler sadece bulundukları { } blok içinde geçerlidir. Blok dışından erişim yapılamaz. Block scope sadece let ve const için geçerlidir.Var da geçerli değildir Var ile tanımlanırsa block scope dışından da erişilebilir,var ile tanımlanırsa kendini function da zanneder
+             }
+             fonk4(-3);
+
+
+
+
+
+             //HOISTING
+            //Javascript te default bir davranış olarak tanımlanan değişkenler ve function lar bulundukları scope ta default olarak en tepeye alınır. Böylece tanımlama yapılmadan önce kullanılabilirler. Buna hoisting denir.(JS bu işlemi kodları yorumlarken yapar)
+
+            //let ve const ile yapılan tanımlamalar da hoist edilmektedir ancak tanımlamadan önce kullanıma izin vermediklerinden dolayı, kullanılırsa ReferenceError hatası vermektedirler
+
+            //Sadece declaration hoist edilir, initializations edilmez
+
+            //Bu nedenlerden dolayı var kullanılmamalıdır
+
+
+
+
+
+            //ANONYMOUS FUNCTION
+            //Fonksiyonların herhangi bir isim vermeden tanımlanmasına anonymous function denir
+            //Fonksiyonların oluşturulup kendi kendini çağırması işlemine  IIFE (Immediately Invoke Function Expression) denir Scope oluşturarak global değişkenlerin çakışmasını engeller,güvenliği ve modülerliği sağlar.
+
+           /*  function (){
+                alert("Hello");
+            }  ----->İsimsiz bir fonksiyon yazıyoruz Daha sonra bütün fonksiyonu parantez içine alıyoruz ve en sonunda sadece () ekleyerek fonksiyonu çağırıyoruz  */
+(
+            function(){
+                alert("Hello");
+            }) ();
+
+            //veya başa bir ünlem koyarak da aynı işlemi yapabiliriz
+            !function(){
+                alert("Hello2");
+            }();
+
+
+
+
+
+
+
+
+
+
+        
+
+    </script>
+    
+</body>
+</html>

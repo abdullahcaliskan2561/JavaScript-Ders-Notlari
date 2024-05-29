@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
 
@@ -13,11 +15,63 @@
 
 
      -->
+     <label for="">Price</label>
+     <input type="number" id="txtPrice"> <br>
+     <label for="">Dicount</label>
+     <input type="number" id="txtDiscount"> <br>
+     <label for="">Tax</label>
+     <input type="number" id="txtTax">
+     <button onclick="setPrice()">SetPrice</button>
+     <p id="result"></p>
 
 
-     <script>
-        
-     </script>
-    
+
+    <script>
+        //Generic Function ını oluşturalım
+        const getPrice = (price, discountRate, taxRate) => {
+            if (!price || !discountRate || !taxRate || isNaN(price) || isNaN(discountRate) || isNaN(taxRate) || price < 0 || discountRate < 0 || taxRate < 0 || discountRate > 100 || taxRate > 100) {
+                return "Hatalı veri girdiniz";
+            }
+                /* if(!price ||isNaN(price) || price<0) return ;
+                if(!discountRate ||isNaN(discountRate)) discountRate=0;
+                if(!taxRate ||isNaN(taxRate)) taxRate=0;  şeklinde de yazabilirdik
+                 */
+
+
+                if (price > 1500) discountRate += 10;
+                if (discountRate <= 0) taxRate = 0;
+
+
+                const totalTax = price * taxRate / 100;
+                const totalDiscount = price * discountRate / 100;
+                const total = price + totalTax - totalDiscount;
+                return total;
+
+            
+        }
+        //Console daki görünüme bakalım
+
+        const priceTotal = getPrice(1000, 25, 18);  //930
+        console.log(priceTotal);
+
+
+        //Bir event a atayalım
+
+        const setPrice = () =>{
+             const inputPrice =parseFloat(document.getElementById(`txtPrice`).value);
+             const inputDiscount =parseFloat(document.getElementById(`txtDiscount`).value);
+             const inputTax =parseFloat(document.getElementById(`txtTax`).value);
+
+             const totalPrice =getPrice(inputPrice, inputDiscount, inputTax);
+             document.getElementById(`result`).innerText = totalPrice;
+
+         } 
+
+
+
+
+    </script>
+
 </body>
+
 </html>
