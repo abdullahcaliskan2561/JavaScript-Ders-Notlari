@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Bir programda olabilecek olayların yakalanması ve olay gerçekleştiğinde istenilen
+kodların çalıştırılması işlemine event handling , bu işlemi yapan kodlara da event
+handler denir. -->
+
+    <!-- 
+    Click me --- > Event Triggering
+    Event--- >Event Throwing
+    Event Listening --- >button.onclick =sayHello() ;
+    Event Handling --- > function sayHello(){
+                         alert("Hello");
+                     }
+    --- >Hello
+
+ -->
+
+
+    <button id="btnDeneme" onclick="sayHello()">Say Hello</button>
+    <button id="btnDeneme2">Say Hello2</button>
+    <button id="btnDeneme3">Say Hello3</button>
+    <button id="btnDeneme4">Say Hello4</button>
+    <button id="btnDeneme4un2si">Say Hello4un2si</button>
+    <button id="btnDeneme4un3su">Say Hello4un3su</button>
+
+
+    <Script>
+
+        /*    1. Yöntem---Şu ana kadar gördüğümüz butona doğrudan onclick özellliği ekleyerek yapma
+        
+        <button onclick = "sayHello()">Tıkla</button> 
+         burada 
+         onclick---Event Listener
+         sayHello()---Event Handler
+     
+         function sayHello(e){
+             alert("Hello");
+         }
+     
+          */
+
+        function sayHello(e) {
+            alert("Hello 1. yöntem");
+        }
+
+
+
+
+        /*      2.Yöntem----Elemente verilen id üzerinden tanımlama
+
+        <button id="btnMsg">Tıkla</button> 
+
+        document.queryselector("#btnMsg").onclick = sayHello;
+
+        function sayHello(e){
+            alert("Hello");
+        }
+         */
+
+        const sayHello2 = () => {
+            alert("Hello 2. yöntem")
+        }
+        /* Aslında burada sayHello2 yi bir değişken olarak atadık Sanki const sayHello2() =15 şeklinde Ancak burada ilkel bir atama değil de fonksiyona atadık Yani const sayHello2() = function (){ }  şeklinde yazılmış hali Burada daha da kısaltma yaparak arrow dfunction olarak const sayHello2 = () => {alert("Hello 2. yöntem")}  şeklinde yazmış olduk Daha sonra da buna aşağıda  document nesnesi üzerinden onclick özelliğini eklemiş olduk*/
+
+        document.querySelector("#btnDeneme2").onclick = sayHello2;/* Burada önemli bir başka nokta da sayHello2() şeklinde yazmıyoruz Sadece sayHello2 olarak yazıyoruz Eğer sayHello2() şeklinde yazarsak biz butona basmadan hemen çalışır ve ekranda sonucu görürüz */
+
+
+
+        /*     3.Yöntem 
+        3.yöntem aslında 2. yöntemdeki kodların birleştirilerek kullanılması halidir
+
+        <button id ="btnMsg">Tıkla</button>
+        document.queryselector("#btnMsg").onclick =function (e) {
+            alert("Hello")
+        }
+    
+        */
+
+        document.querySelector("#btnDeneme3").onclick = function (e) {
+            alert("Hello 3. yöntem")
+        }
+
+
+
+
+        /* 4.yöntem
+        4.yöntem de yine kısaltılmış bir yöntemdir
+
+         <button id ="btnMsg">Tıkla</button>
+         document.queryselector("#btnMsg").addEventListener ("click",function (e){
+            alert("Hello")
+         })      
+        */
+
+        document.querySelector("#btnDeneme4").addEventListener("click", function (e) {
+            alert("Hello 4.yöntem")
+        });
+        //veya bu 4.yöntemi şu şekilde de yazabiliriz 
+
+        document.querySelector("#btnDeneme4un2si").addEventListener("click", (e) => {
+            alert("Hello 4un2si yöntemi")
+        });/* En kısa ve en çok tercih edilen yöntem */
+
+
+        //Burada oluşturduğumuz bir fonksiyonun atamasını da yaparak yazabiliriz 
+        function sayHello(e) {
+            alert("Hello 4un3su yöntemi")
+        }
+        document.querySelector("#btnDeneme4un3su").addEventListener("click", sayHello);
+
+
+
+        //NOT--->Parantez içlerine yazıla e harfi meydana gelen olayın nerede olduğunu olayla ilgili bilgileri içeren bir obje  oluşturur Ve biz bu e yi kullanarak olaylay ilgili bilgilere ulaşabiliriz Yani parantez içerisinde e yazılması daha iyi olur
+
+
+
+
+
+
+
+
+
+
+
+    </Script>
+
+
+</body>
+
+</html>

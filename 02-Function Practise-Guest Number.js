@@ -66,7 +66,7 @@ function guess() {
             txtNum.value = "";//Inputun degerini sıfırlama
             txtNum.removeAttribute("placeholder");//Inputun placeholderını sıfırlama
             guessCountDisplay.innerHTML = `Kalan tahmin hakkı: ${remainingGuesses} `;
-        
+
         } else {
             txtResult.innerHTML = `Tahmin hakkınız bitti! Doğru sayi ${randomNumber} idi.`
         }
@@ -75,14 +75,14 @@ function guess() {
 
 
 //Rastgele bir sayı oluşturacak fonksiyon
-    function getRandomNumber() {
-        return Math.floor(Math.random() * (maxRandomNumber - minRandomNumber + 1) + minRandomNumber);
+function getRandomNumber() {
+    return Math.floor(Math.random() * (maxRandomNumber - minRandomNumber + 1) + minRandomNumber);
 
 
-        /* Math.floor(Math.random() * (max - min + 1)) + min
-         5-60  arasında (5-60 dahil) rastgele sayı üretmek istiyorsak formülü şu şekildedir
-         Math.floor(Math.random() * (60 - 5 + 1)) + 5;
-         Math.floor(Math.random() * (56)) + 5;
-    
-        */
-    }
+    /* Math.floor(Math.random() * (max - min + 1)) + min
+     5-60  arasında (5-60 dahil) rastgele sayı üretmek istiyorsak formülü şu şekildedir
+     Math.floor(Math.random() * (60 - 5 + 1)) + 5;
+     Math.floor(Math.random() * (56)) + 5;
+ 
+    */
+}

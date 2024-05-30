@@ -7,7 +7,7 @@ const txtResult = document.querySelector("#txtResult");
 
 
 
-let randomNumber = 0 ;
+let randomNumber = 0;
 
 //Start butonuna basıldığında çalışacak fonksiyon
 const start = () => {
@@ -17,15 +17,15 @@ const start = () => {
     txtNum.focus();
     btnGuess.classList.remove("d-none");//Burada da classlist.remove ile sildik
     btnStart.innerHTML = "Yeniden başlat";
-    txtResult.innerHTML="";
-    
+    txtResult.innerHTML = "";
+
 }
 //Sonuç bulunduğunda oyunu en  başa almak için kullanılacak fonksiyon
 const reset = () => {
     btnGuess.classList.add("d-none");
     txtNum.setAttribute("disabled", "disabled");// txtNum.setAttribute("disabled","true"); şeklinde de yazabilirdik
     btnStart.innerHTML = "Start the Game";
-   
+
 }
 
 
@@ -37,7 +37,7 @@ function guess() {
         txtResult.innerHTML = "Lütfen 1-100 arasında bir sayi giriniz";
         return;
     }
-    if (guessNumber ===randomNumber) {
+    if (guessNumber === randomNumber) {
         txtResult.innerHTML = "🏆🏆🏆Bildiniz Tebrikler...🏆🏆🏆"
         txtResult.classList.replace("text-danger", "text-success");
         reset();
@@ -51,8 +51,8 @@ function guess() {
     txtNum.focus();//İmlecin input içerisine girmesini sağlar
     txtNum.value = "";//Inputun degerini sıfırlama
     txtNum.removeAttribute("placeholder");//Inputun placeholderını sıfırlama
-    
-  
+
+
 }
 
 
@@ -62,7 +62,7 @@ function guess() {
 //Rastgele bir sayı oluşturacak fonksiyon
 const getRandomNumber = () => {
     return Math.floor(Math.random() * 100 + 1);
-    
+
 
     /* Math.floor(Math.random() * (max - min + 1)) + min 
      5-60  arasında (5-60 dahil) rastgele sayı üretmek istiyorsak formülü şu şekildedir
@@ -70,6 +70,6 @@ const getRandomNumber = () => {
      Math.floor(Math.random() * (56)) + 5;
 
     */
-   
-    
+
+
 }
