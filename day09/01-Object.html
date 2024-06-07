@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Backend den bize cevaplar  array veya obje olarak gelir
+    Biz backen de data göndereceğimiz zaman da büyük oranda obje ya da array olarak gönderiyoruz -->
+
+
+    <!-- 
+        {......}
+        Object yapıları kullanılarak bir nesneye ait özellikler ve değerleri gruplandırılabilir.
+
+        Javascript te basit object tanımı { } ile yapılır.-->
+
+        <!-- Json dosyasında key ler de çift tırnak ister ancak JS de keylere çift tırnak yazılmaz Value lere çift tırnak yazılır -->
+
+     <script>
+        const employee = {
+            name: "John",
+            lastName: "Doe",
+            birtDate:  "1990-01-01",
+            age: 30,
+            department:{
+                name:"IT",  
+                location:"Trabzon", //İç içe obje olabilir Sonuç 58.satır
+            },
+            salary: 5000,
+            insreaseSalary :function (){
+                this.salary += 1000 ;//Objelere this keywordu ile function eklenebilir Sonucu 6000 olarak görürüz
+            },
+
+            displayName:function(){
+                return `${this.name} ${this.lastName}` //Veya bu şekilde this keywordu kullanarak isim soyisime erişebiliriz 
+
+                /* This ifadesi bulunduğu yere göre farklı nesnelere referans olabilir 
+                ->Bir nesne içerisindeki bir fonksiyonda ise mevcut nesneye referans olur,
+                ->Tek başınayken window nesnesine referans olur 49.satır,
+                ->Fonksiyon içerisindeyken de window nesnesine referans olur,
+                ->Bir event function içindeyken olayın olduğu elemente referans olur
+                ->Event handler normal function olarak tanımlanırsa this ifadesi olayın olduğu elemente referans verir
+                ->Event handler arrow function olarak tanımlanırsa this ifadesi window nesnesine referans olur
+                */
+                
+            }
+        }
+        console.log(employee);//{ name: 'John', lastName: 'Doe', birtDate: '1990-01-01', age: 30, salary: 5000 }
+        console.log(employee.name);//John
+        employee.insreaseSalary();
+        console.log(employee.salary);//6000
+        console.log(employee.displayName());//John Doe
+
+        console.log(this);//Window
+        console.log(employee.department.name) //IT
+
+
+
+
+
+
+
+     </script>
+    
+</body>
+</html>

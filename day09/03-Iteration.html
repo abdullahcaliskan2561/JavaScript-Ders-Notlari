@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+
+
+
+
+    <script>
+     /* ITERATION  */
+
+   /* Nesnedeki alanları veya değerleri  bir dizi içerisinde dondurmek için yapılan işlemlere iteration denir Obje içerisinde bir field ı arayıp bulmak için mesela */
+
+  /*  entries--- Nesnedeki alanlar ve değerleri bir dizi içinde döndürülür */
+
+   const car = {
+
+                brand: "Mercedes",
+                model: "C180",
+                year: 2020,
+                color: "red",
+                price: 100000,
+                doors: 5,
+                seats: 5,
+                engine: "5.5",
+                tranmission: "Auto"
+            }
+            console.log(car);//-->Object olarak yukarıdaki elemanları döndürür
+            console.log(Object.entries(car));//-->9 Elemanlı bir Array olarak yukarıdaki elemanları döndürür Array in her bir elemanını da key value olarak  0:(2)['brand', 'Mercedes'] döndürür ve bu da iteration yapabilmeye olanak sağlar
+
+            /* Entries hem keyleri hem value ları döndürür */
+
+
+
+            /* keys---Nesnedeki alanları-keys bir dizi içerisinde döndürür */
+            console.log(Object.keys(car));//(9) ['brand', 'model', 'year', 'color', 'price', 'doors', 'seats', 'engine', 'tranmission']--Tek boyutlu dizi oluşturur
+
+
+
+            /* values---Nesnedeki degerleri-values bir dizi içerisinde döndürür */
+            console.log(Object.values(car));//(9) ['Mercedes', 'C180', 2020, 'red', 100000, 5, 5, '5.5', 'Auto']--Tek boyutlu dizi oluşturur
+
+
+
+
+            
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

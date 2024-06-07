@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+
+
+
+    <script>
+        /* CREATING */
+        /*
+        Creating->Bir nesneden başka bir nesne üretmek için kullanılır 
+
+        Mevcut bir nesne olmalı ve o objeden baska bir nesne üretmek için Object.create(parantez içerisine hangi objeden yeni nesne oluşturmak istiyorsak onun ismini yazmalıyız)  şeklinde yeni obje oluşturabiliriz         */
+
+        /* Obejeler ve diziler  primitive data type değildir ve bunlar referans type dirlar */
+
+        const person= {
+            name:"John",
+            lastName:"Doe",
+            age:30,
+            location:"Trabzon"  
+
+        }
+        const yeni1=person;
+        yeni1.name="Ahmet";
+        yeni1.lastName="Yılmaz";
+        yeni1.age=40;
+        yeni1.location="Istanbul";
+
+        console.log(person);
+        console.log(yeni1);
+        console.log(yeni1===person)  //true-->Referans type oldukları için bu şekilde bir nesneden çoğaltma yaparsak ikisi de aynı olur ve hem person hem de yeni1 aynı değerlerin adresini içerisinde tutar Object.create ile yapılınca nasıl olduğuna aşağıda bakalım
+
+
+
+
+
+
+        const yeni2=Object.create(person);
+        console.log(yeni2);
+        yeni2.name="Mehmet";
+        yeni2.lastName="Kılıç";
+        yeni2.age=50;
+        yeni2.location="Izmir";
+        console.log(yeni2);//{name: 'Mehmet', lastName: 'Kılıç', age: 50, location: 'Izmir'}
+        console.log(person)//{ name: 'Ahmet', lastName: 'Yılmaz', age: 40, location: 'Istanbul' }
+        console.log(yeni2===person) //false--Bu şekilde oluşturduğumuzda ise aynı objeden farklı içerikli yeni bir obje oluşturduk Bir objeden yeni bir obje türetildi
+
+        const yeni3=Object.create(person);
+        console.log(yeni3) //[[Prototype]]: Objectage:40lastName:"Yılmaz"location:"Istanbul" name:"Ahmet"
+        //Bu şekilde herhangi bir değer atamadan yeni obje oluşturursak [[Prototype]]: Object şeklinde görünür ve içerisinde person object in bilgilerini barındırır
+
+
+
+
+        /* ASSIGNİNG */
+
+        /* Birden fazla nesneyi birleştirmek içi kullanılır Birleştirme assign methoduna verilen ilk parametre içerisinde   gerçekleştirilir ve eğer bu nesne bir const a atanırsa onun içerisinde de bulunur Satır 99-100 */
+        const car ={
+            brand:"BMW",
+            model:"X5",
+            color:"Red",
+            engine:"2.0",
+            model:"X10"
+        }
+        console.log(car.model) //X10--İki tane aynı isimle value olursa sondakini alır Sonra gelen önce geleni ezer bu nedenle iki obje birleştirilirken de aynı olan değerler varsa sonra geleni alır 
+
+        const target ={a:1, b:2};
+        const source = {b:3, c:4};
+        const result=Object.assign(target, source);
+        console.log(target); // { a: 1, b: 3, c: 4 }
+        console.log(result); // { a: 1, b: 3, c: 4 }--b değerine sonradan 3 geldiği için sonradan gelen ilk geleni ezer 
+
+
+        const car2 = {
+                brand: "Mercedes",
+                model: "X5",
+                color: "Red",
+                engine: "2.0",
+                year: 2020,
+        }
+        Object.assign(car,car2);
+        console.log(car2); // { brand: 'Mercedes', model: 'X5', color: 'Red', year: 2020, engine: '2.0' }---Mercedes Bmw yi ezdi 
+        console.log(car) //{brand: 'Mercedes', model: 'X5', color: 'Red', engine: '2.0', year: 2020}--Aynı value olanlarda sonradan gelen eziyor ve olmayan da ekleniyor car objesinde year yoktu ama eklendi bu şekilde 
+        console.log(car===car2) //false--car ve car2 objeleri farklı referanslardır
+
+
+        //Bir nesneden tamamen bağımsız bir nesne oluşturmak için  yani kopya oluşturmak için  shallow copy-Object.assign methodunu kullanırız Shallow copy oluşturulurken {} içerisinde birleştirme yapılır ve kopya oluşturulur
+
+        const car3=Object.assign({}, car);
+        console.log(car3) //{brand: 'Mercedes', model: 'X5', color: 'Red', engine: '2.0', year: 2020}--Birleştirmeyi {} içerisinde yaptı ve car3 içerisine atadı
+
+    
+
+
+
+
+
+
+
+            
+        
+
+    </script>
+    
+</body>
+</html>
