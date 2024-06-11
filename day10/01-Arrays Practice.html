@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- const fiyatlar = [123, 5666, 126, 67];
+Şeklindeki dizi elemanlarının değerini %20 artıran
+fonksiyonu yazınız. -->
+
+    <h3 id="arrPrices"></h3>
+    <button id="btnGetPrice">Get Price</button>
+    <h4 id="arrNewPrice"></h4>
+
+
+    <script>
+        //1-Diziminzi oluşturalım
+        const arr = [450, 569, 785, 45, 125, 100, 200, 300];
+
+        //2-Elemanlarımıza ulaşalım
+        const arrPrice = document.querySelector("#arrPrices");
+        const btnGetPrice = document.querySelector("#btnGetPrice");
+        const arrNewPrice = document.querySelector("#arrNewPrice");
+
+        //3-Dizimizi h3 içerisinde gösterelim
+        arrPrice.innerHTML = arr;
+
+        //4-Verilen dizide ve verilen artış miktarına göre değişiklik yapan  fonksiyonu yazalım
+        const setPrices = (arr, rate) => {
+            if (!arr || !Array.isArray(arr) || arr.length < 0) return false;//Arr kontrolü
+            if (!rate || isNaN(rate)) return false;//rate kontrolü
+
+
+            //7-Her tıklamada tekrar %rate oranında artırmasını engelledik
+            const newArr=Object.assign([],arr);//Yeni bir dizi oluşturup bunun içerisinde arr ile birleştirdik boş diziyi---Buradaki atamayi 65. satırdaki açıklamadan sonra yaptık 
+            
+            //8-7.maddenin daha kısa bir halini de şu şekilde yapabiliriz
+            //const newArr =[...arr]; 
+
+
+            for (let i = 0; i < newArr.length; i++) { 
+
+                newArr[i] = newArr[i] + newArr[i] * rate / 100;
+            }
+            return newArr; 
+        }
+
+        //5-Butona tıklandıgında fonksiyonu cagıralım
+        btnGetPrice.addEventListener("click", () => {
+            arrNewPrice.innerHTML = setPrices(arr, 20);
+        })
+
+        //5-2--5.kısmı şu şekilde de yazabiliriz 
+       /*  btnGetPrice.addEventListener("click", () => {
+            const result = setPrices(arr, 20);
+            if(result){
+                arrNewPrice.innerHTML = result;
+            }else{
+                alert("Please send an array and a rate"); 
+            }
+
+        })
+        ; */
+
+        //Ancak burada şu sorunu gördük butona bir defa daha bastığımızda yine %20 artıriyor sonucu  Bunun nedeni yeni bir array oluşturmadan orjinal diziyi değiştirmemizdir  Bunun için işlemin yeni bir array e atanmasını sağlarsak problem çözülür  39. satırda bu işlemi yaptık buradaki işlemden sonra
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

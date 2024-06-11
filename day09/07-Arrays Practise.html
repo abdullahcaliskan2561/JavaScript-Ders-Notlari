@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Bir dizi içindeki en büyük sayıyı,en küçük sayıyı ve bütün sayıların toplamını bulan programı yazınız. -->
+
+
+
+    <script>
+        let numbers = [45, 78, 89, 56, 23, 123, 17, 32];
+
+        const calculate = (arr) => {
+            if (!Array.isArray(arr) || arr.length == 0) {
+                return;
+            }
+            let maxNumber = arr[0];//İlk elemanı en büyük olarak varsayalım
+            let minNumber = arr[0];//İlk elemanı en kuçük olarak varsayalım
+            let sum = 0;
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] > maxNumber) {
+                    maxNumber = arr[i];
+                }
+                if (arr[i] < minNumber) {
+                    minNumber = arr[i];
+                }
+                sum += arr[i];
+            }
+            return [ maxNumber, minNumber, sum ];
+
+        }
+        let values = calculate(numbers);
+        console.log(values[0]);//123
+        console.log(values[1]);//17
+        console.log(values[2]);//463
+
+
+    </script>
+
+
+</body>
+
+</html>

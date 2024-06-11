@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Programımızda araba isimlerini saklamak
+istiyoruz. Bu durumda, değişken kullanırsak; 
+
+const araba1 = 'Mercedes' ;
+const araba2 = 'TOFAŞ' ;
+const araba3 = 'Anadol' ;
+const araba4 = 'Ferrari'  şeklinde yazmamız gerekirdi
+
+
+Diziler,bir veri yapısı (data structure ) olup aynı türden bir veya çok daha fazla veriyi saklamak için
+kullanılır.
+
+Javascript te basit dizi tanımı [ ] ile yapılır.
+let kurslar = ["Javascript" , "HTML5" , "CSS" , "Bootstrap"]--Bu dizi index numaralarına göre sıfırdan başlayarak sıralanmıştır
+
+Dizi tanımlama için bir diğer yöntem
+
+let kurslar = new Array ("Javascript" ,"HTML" ,"CSS" ,"Bootstrap")
+
+
+-->
+
+
+
+    <script>
+        const kurslar = ["Javascript", "HTML5", "CSS", "Bootstrap"];
+        console.log(kurslar);//(4)['Javascript', 'HTML5', 'CSS', 'Bootstrap']
+        console.log(kurslar[0]);//Javascript
+        console.log(kurslar.length);//4
+        console.log(kurslar[kurslar.length - 1]);//Bootstrap
+
+        /* Dizi elemanları sıralı olarak belleğe kaydedilirler. */
+        /* Sıra numaraları 0 ile başlar ve dizinin eleman sayısının bir eksiğine (length-1) kadar devam eder. */
+        kurslar[4]="Tailwind";
+        kurslar[1]="React";
+        console.log(kurslar);//(5) ['Javascript', 'React', 'CSS', 'Bootstrap', 'Tailwind']
+
+        /* Dizi const ile tanımlanmış olsa da dizinin elemanlarını değiştirebildik. Çünkü non primitive veri türlerinin içerikleri değiştirilebilir. Ancak, tamamen bir başka dizi ile değiştirilemez.
+        Kurslar burada bu dizinin adresini tutmaktadır. Biz dizinin adresini değiştirmiyoruz Diziye eleman ekliyoruz  onun için ekleme yapabiliyoruz const x=5; olsa idi burada x in içerisinde doğrudan 5 olduğu için hata verecekti değiştiremeyecektik Ama bu bir dizi olduğu için içerisine ekleme yapabildik adresini değiştirmediğimiz için */
+        //kurslar =["Ali" ,"Veli"];
+        //console.log(kurslar);//05-Arrays-Diziler.html:49 Uncaught TypeError: Assignment to constant variable.Eğer bu şekilde içeriğini tamamen farklı bir dizi ile değiştirmek istersek o zaman hata verir
+        kurslar.push("Ali");
+        console.log(kurslar);//(6) ['Javascript', 'React', 'CSS', 'Bootstrap', 'Tailwind', 'Ali']--Bu şekilde ekleme yapar hata vermez Eklemeyi kurslar= diyerek yapmamalıyız Bu diziyi farklı bir dizi olarak atama yapar onun için hata verir
+                
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

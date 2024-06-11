@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!-- Bir dizi içindeki en büyük sayıyı bulan programı yazınız. -->
+
+    <script>
+
+        let numbers =[45, 78 ,89 , 56 ,23,123,17,32];
+
+        const calculate =(arr) =>{
+            //İlk elemanı en büyük olarak varsayalım ve ikili karşılaştırma yaparak ilerleyelim
+
+            let maxNumber = arr[0];//İlk eleman en büyük olsun
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] > maxNumber) { 
+                    maxNumber = arr[i];
+                }
+            }
+            return maxNumber;
+
+        }
+       let resultMaxNumber = calculate(numbers);
+       console.log(resultMaxNumber);//123
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
