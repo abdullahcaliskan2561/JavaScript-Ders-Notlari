@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- tlFiyatlar dizisindeki ürünlere fiyatı 100 TL den fazla
+olanlara %10 zam, 100 TL den az olanlara ise %15 zam
+yapılmak isteniyor.
+
+Ayrıca,zamlı olan yeni değerleri yeni bir diziye saklamak istiyoruz. 
+Bu soruyu array of object olarak çözeceğiz Normal diziden daha farklı olarak -->
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const products = [
+            {id : 1, name : "Laptop", price : 5000},
+            {id : 2, name : "Mouse", price : 50},
+            {id : 3, name : "Keyboard", price : 200},
+            {id : 4, name : "Monitor", price : 3000},
+            {id : 5, name : "CPU", price : 6000},
+            {id : 6, name : "Memory", price : 7000},
+            {id : 7, name : "Headphone", price : 75}
+        ];
+
+        //Return lu uzun yol ve return süz kısa yol olarak yapalım
+        // Uzun yol
+        const newProducts = products.map((product) => {
+             if(product.price > 100){
+                return product.price * 1.1
+             }else{
+                return product.price * 1.15;
+             }   
+        })
+        console.log(newProducts);//Bu şekilde yazdırdığımızda console da sadece ürün fiyatlarını görürüz Product un hepsi görünmez Sadece fiyatlarda değişiklik olsun ve biz sonuçta product un tamamını görelim istiyorsak ilgili kısımları aşağıdaki gibi yazmalıyız.Spread ı gördüğümüzde  daha kısa olarak yapabileceğiz 
+
+        const newProducts2 = products.map((product) => {
+            if(product.price > 100){
+               product.price *=  1.1
+            }else{
+               product.price *= 1.15;
+            }   
+            return product
+        })
+        console.log(newProducts2);
+
+        //Bu sorunun farklı bir çözümü ise şu şekildedir
+
+    
+
+        // Fiyatı güncelleyen ve yeni bir dizi oluşturan fonksiyon
+        const updatedProducts = products.map((product) => {
+            const updatedProduct = { ...product }; // Orijinal nesneyi klonla
+            if (updatedProduct.price > 100) {
+                updatedProduct.price *= 1.1;
+            } else {
+                updatedProduct.price *= 1.15;
+            }
+            return updatedProduct;
+        });
+
+        console.log(updatedProducts);
+
+       
+
+      
+
+
+       
+
+    </script>
+    
+</body>
+</html>

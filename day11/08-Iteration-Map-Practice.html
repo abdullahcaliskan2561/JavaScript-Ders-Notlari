@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+  <!-- TL fiyatlat dizisindeki fiyatların Euro ve Dolar karşılıklarını hesaplatarak yeni dizilere kaydediniz -->  
+   <ul>
+    <li id="try"></li>
+    <li id="eur"></li>
+    <li id="usd"></li>
+   </ul>
+
+
+
+  <script>
+    const tryPriceList=[24000, 30000 , 45000 , 65000 ,85000];
+    const eur=35.45;
+    const dolar =32.68;
+
+    const  eurPriceList =tryPriceList.map((price) => (price /eur).toFixed(2) + " EUR");
+    const  dolarPriceList =tryPriceList.map((price) => (price /dolar).toFixed(2) + " USD");
+
+    document.querySelector("#try").innerHTML=tryPriceList.join(" - ");
+    document.querySelector("#eur").innerHTML=eurPriceList.join(" - ");
+    document.querySelector("#usd").innerHTML=dolarPriceList.join(" - ");
+
+  </script>
+    
+</body>
+</html>
