@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Örnek:Bireyler dizisindeki kişilerden adı belirtilen " harf ile başlayanları seçerek ayrı bir diziye saklayan uygulamayı yazınız. -->
+
+    <script>
+        const people = ["Abdullah", "Ahmet", "Merve", "Fatih", "Hilal", "Mustafa", "Zaza"];
+
+        function filteredPeople(letter) {
+            return people.filter((person) => person.startsWith(letter));
+
+        }
+        console.log(filteredPeople("Ab"));
+        console.log(filteredPeople("M"));
+        console.log(filteredPeople("Z"));
+
+
+
+        //2.yöntem olarak şu şekilde yapabiliriz
+        const people2 = ["Abdullah2", "Ahmet2", "Merve2", "Fatih2", "Hilal2", "Mustafa2", "Zaza2"];
+
+        const filtrele =function(harf){
+            const a =harf.toUpperCase();
+            const filtered =people2.filter((t)=>t.startsWith(a));
+            return filtered;
+        };
+        console.log(filtrele("A"));
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

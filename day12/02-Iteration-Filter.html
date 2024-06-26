@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- Belirtilen " harf ile başlayanları seçiniz  -->
+
+    <script>
+        const products = [
+            { id: 1, name: "Laptop", price: 5000 },
+            { id: 2, name: "Mouse", price: 50 },
+            { id: 3, name: "Keyboard", price: 200 },
+            { id: 4, name: "Monitor", price: 3000 },
+            { id: 5, name: "CPU", price: 6000 },
+            { id: 6, name: "Memory1", price: 7000 },
+            { id: 7, name: "Headphone", price: 75 },
+            { id: 8, name: "Keyboard", price: 200 },
+            { id: 9, name: "CPU", price: 6000 },
+            { id: 10, name: "Memory2", price: 7000 },
+        ];
+
+        const filterArray = (a) => {
+            const filteredProducts = products.filter((product) => product.name.startsWith(a));
+            return filteredProducts;
+
+        }
+        console.log(filterArray("L"));
+        console.log(filterArray("M"));
+
+        //28.satırda tek satır olarak fonksiyon yazdığımız için return yazmadık Eğer tek satır olarak değil de çok satır olarak yazacak olsa idik şu şekilde yazabilirdik
+        /* const filterArray = (a) =>{
+                const filteredProducts = products.filter((product)=>{
+                    return product.name.startsWith(a);
+                });
+                return filterArray;
+            } */
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
