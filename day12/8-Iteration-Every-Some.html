@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Every -->
+    <!-- Mevcut bir dizi içinde tüm elemanların istenilen kriteri sağlayıp sağlamadığını döndürür. Sağlıyorsa true , değilse false döner. -->
+
+    <!-- Some -->
+    <!--Mevcut bir dizi içinde en az bir elemenın istenilen kriteri sağlayıp
+sağlamadığını döndürür. Sağlıyorsa true , değilse false döner.  -->
+
+
+
+    <script>
+        const prices = [12, 454, 45, 89, 36, 47, 452, 36, 10, 250, 67];
+
+        //Tüm elemanların price >100 durumunu sağlaması durumunda true döner yoksa false döner
+        if (prices.every((price) => price > 100)) {
+            alert("Tüm fiyatlar 100 den büyük");
+
+        }
+
+
+        //En az bir elemanın price  >100 durumunu sağlaması durumunda true döner yoksa false döner  
+        if (prices.some((price) => price > 100)) {
+            alert("100 den büyük en az bir tane fiyat var");
+
+        }
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

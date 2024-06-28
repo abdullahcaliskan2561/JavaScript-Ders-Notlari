@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h1 id="welcomeText">Welcome to my APP</h1>
+
+    <article></article>
+
+    <p class="contact">Lorem, ipsum dolor sit amet   <span>consectetur</span>  adipisicing elit. Dolorum saepe labore cupiditate non cum nam aperiam a veritatis, enim adipisci omnis. Maxime necessitatibus, praesentium veniam nihil repudiandae iusto delectus esse temporibus nostrum aliquam obcaecati unde in! Repellendus ipsum quas saepe, eveniet architecto nostrum sapiente possimus quam deserunt expedita! Molestias, aliquam quia voluptatem unde repudiandae vitae distinctio tempora dolore nemo deserunt <span>culpa</span>  iste maxime nisi facilis odit? Doloremque tempore voluptatibus distinctio qui porro pariatur commodi ea!
+
+    </p>
+
+
+    <script>
+
+        /* getElementById---Bir elemanı id sinden bulur  En performanslı seçiçi budur Id sadece bir elemana özgü olduğu için */
+        const welcomeText = document.getElementById("welcomeText");
+        welcomeText.innerHTML +=" Bu kısım sonradan eklendi ";
+
+
+        /* GET ELEMENTS METHODLARI HER ZAMAN DİZİ DÖNER ELEMAN BULAMAZSA BİLE BOŞ BİZ DİZİ DÖNER */
+
+        /* getElementsByTagName---Bir elemanı Tag (Etiket) adına göre bulur---Tag olanlar aynı bütün tagları getirir Dizi şeklinde getirir Örneğin ilk elemana ulaşmak istersek contactSpan[0].textContent ="Merhaba"  yazarsak ilk elemana merhaba eklemiş oluruz */
+
+        const contactSpan =document.getElementsByTagName("span");
+        console.log(contactSpan);
+        contactSpan[0].textContent ="MERHABA";
+
+        /* getElementsByClassName---Bir elemanı Class (Sınıf) adına göre bulur  Bu da aynı şekilde dizi döner */
+
+        const contact =document.getElementsByClassName("contact");
+        console.log(contact);
+
+
+
+        /* querySelector---Bir elemanı id , class , özellik, tür ve değere göre seçmek için kullanılır. Eşleşen ilk elemanı seçer. */
+
+        /* querySelectorAll--- Bir elemanı id , class , özellik, tür ve değere göre seçmek için kullanılır. Eşleşen elemanların listesini döndürür. */
+     
+
+
+
+
+
+    </script>
+
+
+    
+</body>
+</html>

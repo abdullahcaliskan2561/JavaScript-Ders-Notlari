@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Reduce -->
+     <!--Mevcut bir dizi içinde iterasyon yapıp, yapılan işlemlere göre tek bir
+hesaplanmış değer döndürür. -->
+<!-- Reduce iki tane parametre alır Burada göreceğimiz toplama işleminde ilk parametre fonksiyon olacak ikinci parametre ise toplama olacağı için 0 olacak Çarpma olsa idi 1 olacaktı -->
+ <!-- Reduce her zaman tek bir sonuç verir -->
+
+<script>
+
+    /* Koordinatlar dizisindeki değerlerin toplamını, ara değerleri de göstererek konsola bastıran
+uygulamayı reduce () ile yazınız. */
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    const sum =arr.reduce((toplam,number)=>{
+        console.log(toplam ,number);
+        return toplam + number;
+    } , 0);
+
+    console.log(sum);
+
+    //Bir de çarpmasını yapalım
+
+    const sum2 =arr.reduce((carpım,number)=>{
+        console.log(carpım ,number);
+        return carpım * number;
+    } , 1);
+    console.log(sum2);
+
+    //Bir de ortalamasını yapalım
+    const sum3=arr.reduce((bölüm,number)=>{
+        console.log(bölüm ,number);
+        return bölüm + number;
+    },0) /arr.length;
+
+    console.log(sum3);
+    
+
+</script>
+
+    
+</body>
+</html>

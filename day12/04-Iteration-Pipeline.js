@@ -1,23 +1,45 @@
-import { countries } from "./04-Iteration-Pipeline-Data-Countries/countries.js";
-console.log(countries);//Bu şekilde yazdığımızda  Uncaught SyntaxError: Cannot use import statement outside a module şeklinde hata verdi Bunu düzeltmek için html dosyamız içerisindeki script bağlantı dosyasına gidip oraya type="module" ekliyoruz
+import { countries } from "./04-Iteration-Pipeline-Data-Countries/countries.js"; // Assuming your data is in a separate file named data.js
 
+const ddlCountries = document.querySelector("#ddlCountries");
+const tblCountry = document.querySelector("#countriesTable");
 
-/* Buradaki countries i select içerisine dolduracak bir fonksiyon yazalım */
 const loadData = () => {
-    let options = "";
+    let options = `<option value="">Select Your Country</option>`; // Disabled option for initial selection
+
     for (let country of countries) {
-        options += `<option> ${country.name.common}</option>`;
+        options += `<option value="${country.ccn3}">${country.name.common}</option>`;
     }
 
-    const ddlCountries = document.querySelector("#ddlCountries");
     ddlCountries.innerHTML = options;
-}
+};
+
 loadData();
 
+const getCountry = (countryCode) => {
+    const filteredCountry = countries.filter((country) => country.ccn3 === countryCode);
+    return filteredCountry.length > 0 ? filteredCountry[0] : null; // Return null for non-existent countries
+};
 
+const fillTable = (country) => {
+    if (country) {
+        const capitalCity = country.capital.join("-");
+        const currencies = Object.keys(country.currencies).join(" - "); // Join currency codes
+        const languages = Object.values(country.languages).join(" - "); // Join languages
+        const area = country.area;
+        const mapLink = `<a href="https://www.google.com/maps?q=${country.latlng.toString()}" target="_blank">Google Maps</a>`;
 
-/* Örneğin biz save butonuna bastığımızda select te görünen ülke adı değil de o ülkeye ait başka bir bilginin backend e gitmesini istiyorsak onu da şu şekilde yapabiliriz  Options kısmına 9.satır şu şekilde yazmalıyız  */
-options += `<option value="${country.cca2}"> ${country.name.common}</option>`; //Bu şekilde yazdığımızda cca 2 bilgisi backend e gönderdilir
+        tblCountry.querySelector("tr:nth-child(1) td").innerHTML = capitalCity;
+        tblCountry.querySelector("tr:nth-child(2) td").innerHTML = currencies;
+        tblCountry.querySelector("tr:nth-child(3) td").innerHTML = languages;
+        tblCountry.querySelector("tr:nth-child(4) td").innerHTML = area;
+        tblCountry.querySelector("tr:nth-child(5) td").innerHTML = mapLink;
+    } else {
+        // Optional: Clear table or display a message for non-existent countries
+    }
+};
 
-//Bu kısmı tamamen day11 den aldık Sadece 1.satırdaki import kısmını düzenledik
-
+ddlCountries.onchange = (event) => {
+    const countryCode = event.target.value;
+    const country = getCountry(countryCode);
+    fillTable(country);
+};
