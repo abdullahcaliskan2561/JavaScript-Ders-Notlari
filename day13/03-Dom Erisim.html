@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+
+    <!-- Method
+
+closest---En yakın elemanı seçer, yukarı doğru çalışır
+children---Bir elementin çocuklarını seçer
+firstElementChild , lastElementChild---Bir elementin ilk çocuğunu veya son çocuğunu
+seçer.
+parentElement---Bir elemanın parent ını seçmek için kullanılır.
+nextElementSibling , previousElementSibling---Bir elemanın önceki veya sonraki kardeşini
+(aynı seviye) seçmek için kullanılır -->
+
+
+
+<header>
+    <h1>DOM</h1>
+</header>
+
+<main>
+    <ul id="employeeList" class="list">
+        <li>Lorem. <span>🆗</i></span> </li>
+        <li>Maxime. <span> 🆗</span> </li>
+        <li>Sint? <span>🆗</span> </li>
+        <li id="btn">Consequuntur? <span>🆗</span></li>
+        <li>Soluta! <span>🆗</span> </li>
+    </ul>
+</main>
+
+
+<script>
+    //closest   
+    const btn =document.getElementById("btn");
+    btn.closest("main").classList.add("hellooooo");
+
+    //Örneğin header btn nin parent olmamasına rağmen ona nasıl erişebiliriz
+
+    //OK lara basıldığında ilgili elementin arka plan rengini değiştiren kod yazalım
+    const spans = document.querySelectorAll("#employeeList span");
+    spans.forEach((span) => {
+        span.addEventListener("click", () => {
+            span.closest("li").classList.add("bg-info");
+            //tıklamada varsa renk kaldırma yoksa renk eklemek istiyorsak toggle ile de son kısmı yazabilirdik
+            // span.closest("li").classList.toggle("bg-info");
+        })
+    })
+
+     //Örneğin header btn nin parent olmamasına rağmen ona nasıl erişebiliriz
+     const header = btn.closest("body").querySelector("header");
+     header.classList.add("bg-danger");//Arka planı kırmızı yaptık //Burada şunu gördük paren e  doğru yukarı hareketler closest le aşağı doğru çocuklara hareketler querySelector ile gidilerek seçilir
+
+     //Children
+     const employeeList = document.getElementById("employeeList");
+     console.log(employeeList);
+     console.log(employeeList.children);
+     console.log(employeeList.childNodes);//Chilnode içerisinde  element , text , comment gibi nesneleri yani görünür görünmez bütün elemanları seçer onun için kullanmamak daha iyidir
+
+     console.log(employeeList.firstElementChild);//İlk li
+     console.log(employeeList.lastElementChild);//Son li
+     console.log(employeeList.parentElement);//main class hellooooo
+
+     //Seçme işlemlerinde eğer eleman bulamazsa null verir sonuç olarak
+
+     //Sblings
+     console.log(btn.parentElement.previousElementSibling);
+     console.log(btn.parentElement.nextElementSibling);
+
+
+
+
+</script>
+    
+</body>
+</html>
