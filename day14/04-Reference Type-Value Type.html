@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 
+    JS de primitive data type ları stack memory de saklanır
+    Non-primitive data type lar ise heap memory de saklanır--- Objeler Diziler ve Fonksiyonlar gibi
+
+
+     -->
+
+     <script>
+        let username = "admin";//Burada username değişkeninin hem ismi hem de  admin degeri stack memory de saklanır
+
+     let employee = {
+         id: 1,
+         name: "admin",
+         salary: 1000
+     } //Burada ise employee değişkeninin değeri heap memory de saklanır Ve bu değerin bir referans numarası-adres değeri vardır  Ve bu değer  ise değişken ismi ile stack memory de saklanır
+
+     const newUsername =username;//newUsername e username değişkeninin degerini atadık ve yazdırdığımızda sonucu admin olarak görüyoruz
+     username="Abdullah"//Username e Abdullah değerini atadık ve yazdırdığımızda sonucu Abdullah olarak görüyoruz Ancak bu atama sadece username i etkiledi  newUsername i etkilemedi
+
+     console.log(username);//Abdullah
+     console.log(newUsername);//admin
+
+     //Şimdi non-primitive olan employee ye bakalım
+     const newEmployee= employee;
+
+     employee.name="Abdullah";
+     console.log(employee);//{id: 1, name: 'Abdullah', salary: 1000}
+     console.log(newEmployee);//{id: 1, name: 'Abdullah', salary: 1000}
+     //Burada gördüğümüz ise biz bir objede değişiklik yapsak bile bu diğerinde de mutlaka görülür.Çünkü bu oluşanların ikisi de birbirinin aynısıdır Bunlara referans type denir Bu şekilde çoğaltmada stack de  heap deki aynı objeye bakan 2 tane referans numarası vardır aslında
+
+     //Primitive--İlkel veri tipleri value type dir
+     //Non-primitive  veri tipleri referans type dir
+
+
+
+
+
+
+
+     </script>
+
+     
+
+
+
+    
+</body>
+</html>
