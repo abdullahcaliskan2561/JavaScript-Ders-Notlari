@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Gecikmeli olarak çalışması istenilen kodlar, timeout oluşturularak ve belli bir gecikme zamanı belirlenerek çalıştırılabilir.
+
+
+     Time out 2 tane parametre alır. Bir tanesi fonksiyon, digeri ise gecikme zamanı. 
+     
+     clearTimeout () methodu ile timer durdurulabilir.-->
+
+     <button id="btn">Click me</button>
+
+     <script>
+        document.getElementById("btn").addEventListener("click", () => {
+            setTimeout(sayHello, 3000);
+            console.log("Program akışı burada duruyor mu nun kontrolünü yapalım") //Bu şekilde kontrol ettiğimizde programın beklemediğini devam ettiğini önce burayı yazdırdığını 3 sn sonra da sayHello yu çalıştırır
+            //sayHello();
+
+
+
+            //SetTimeout şu şekilde de yazılabilir.
+            setTimeout(() => {
+                alert("Hello JS");
+            }, 5000);   //Bu şekilde yazdığımızda önce 3 sn sonra Hello çalışır sonra 5.saniye de Hello JS çalışır.
+        });
+
+        const sayHello = () => {
+            alert("Hello");
+        }
+
+        /* 
+        JS kesinlikle single thread bir dildir Herşey birbirii bekler Bazen sadece burafa olduğu gibi browser kaynaklı multi thread uygulamalar yapılabilir
+        Toplamda 3 çıktının görünmesi 5 sn süre almaktadır
+        1."Program akışı burada duruyor mu nun kontrolünü yapalım"
+        2."Hello" 
+        3."Hello JS"*/
+
+     </script>
+
+
+
+</body>
+
+</html>

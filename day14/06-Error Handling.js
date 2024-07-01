@@ -44,3 +44,5 @@ const isEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);  
 }
+
+//Try ve catch kullanmak zorunludur Finally kullanmak zorunlu değildir Try -Catch -Finally kullandığımızda try ve finally mutlaka çalışır  Catch sadece  hata olduğunda çalışır

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Belli periyotlarla çalışması istenilen kodlar, interval oluşturularak ve belli bir zaman belirlenerek çalıştırılabilir.
+
+    clearInterval () methodu ile timer durdurulmalıdır Yokda başka sayfaya geçsek bile browser kapatılana dek bu kodlar çalışır
+
+    Bu da set Timeout gibi iki değer alır Biri çalışacak kodlar diğeri de zaman
+     
+    
+    -->
+
+
+    <button id="btnStart">Start</button> <!-- 1 -->
+    <button id="btnStop">Stop</button> <!-- 2 -->
+    
+    <ul id="lstPrices"></ul>  <!-- 3 -->
+    
+    <script>
+        const btnStart = document.getElementById("btnStart")
+        const btnStop = document.getElementById("btnStop")
+        const lstPrices = document.getElementById("lstPrices")
+        let timer = null;
+
+        const getRandomPrice = () => {                                        /* 4 */
+            const price = Math.floor(Math.random() * 4000 + 1000);
+            return price;
+        }
+
+        const setPrices = () => {                                           /* 5 */
+            if (timer) return;
+
+            timer = setInterval(() => {
+                const li = document.createElement("li");
+                li.innerText = getRandomPrice();
+                lstPrices.appendChild(li);
+
+            }, 2000)
+        }
+
+        btnStart.addEventListener("click", () => {                 /* 6 */
+            setPrices();
+        })
+
+        btnStop.addEventListener("click", () => {                 /* 7 */
+            clearInterval(timer);
+            timer = null;
+        })
+
+
+    </script>
+    
+</body>
+</html>
