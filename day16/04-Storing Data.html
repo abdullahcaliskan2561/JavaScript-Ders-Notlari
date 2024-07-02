@@ -7,9 +7,26 @@
 </head>
 <body>
 
-    <!-- Practice:
-    Sayfa her ziyaret edildiğinde, ziyaretçiye siteye kaçıncı kez girdiğini söyleyen programı yazınız. 
-    -->
-    
+    <div id="counter">Uygulamamiza <span>ilk</span> defa girdiniz</div>
+
+    <script>
+
+        (() => {
+            let count = localStorage.getItem("count");
+            //if(!count) count=1;
+            count ??= 1;
+
+            if (count > 1) {
+                document.querySelector("#counter span").textContent = `${count}.`
+            }
+
+            count++;
+            localStorage.setItem("count", count);
+
+        })();
+
+
+
+    </script>
 </body>
 </html>
