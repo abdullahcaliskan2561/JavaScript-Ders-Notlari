@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    Öğrencinin adı ve soyadı ile belirsiz sayıda notu parametre olarak alan ve
+notların ortalamasını bulup, öğrenci adı ile birlikte ortalamayı döndüren fonksiyonu
+yazınız. -->
+
+
+
+<script>
+
+    const getAverage  = (firstName , LastName ,...scores ) =>{
+         const totalScore =scores.reduce((a,b) => a + b , 0 ) ;
+         const average =(totalScore /scores.length).toFixed(2);
+         return ` ${firstName} ${LastName} ın ortalaması ${average} `
+
+    }
+    console.log(getAverage("Abdullah" ,"Çalışkan" , 10, 20, 30, 40, 50, 60, 70, 80, 90, 100));
+
+    //Fonksiyonda bir tane rest olur ve rest in de en sonda olması lazım yazılırken
+    
+
+ 
+    
+</script>
+    
+</body>
+</html>

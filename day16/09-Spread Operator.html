@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- İki farkli diziyi spread kullanarak birleştirelim -->
+
+    <script>
+        let citiesOfTurkey = ["Istanbul", "Ankara", "Izmir", "Bursa"];
+        let citiesOfGermany = ["Berlin", "Hamburg", "München"];
+
+        totalCities = [...citiesOfTurkey, ...citiesOfGermany];
+        console.log(totalCities);//Bu şekilde hepsini tek bir dizi içerisinde birleştirdi Ayrıca kendimiz de yeni total içerisinden ekleme yapabiliyoruz 
+        totalCities2 = [...citiesOfTurkey , "Trabzon" ,...citiesOfGermany, "Erzurum"];
+        console.log(totalCities2);
+
+
+        //Aynı işlemleri numbers için de yapabiliriz 
+        const numbers1 = [1,2,3,4,5,6,7,8,9,10];
+        const numbers2 = [11,12,13,14,15,16,17,18,19,20];
+
+        const totalNumbers =[...numbers1, ...numbers2];
+        console.log(totalNumbers);
+
+
+
+        //Bir dizi içerisindeki tekrar eden elemanları silip yeni bir dizi nasıl elde edilir
+
+        let colors =["red", "red", "red", "blue", "blue", "green", "green", "green","orange"];
+        let uniqueColors = [...new Set(colors)];
+        console.log(uniqueColors);//(4)['red', 'blue', 'green', 'orange']
+
+
+    </script>
+    
+</body>
+</html>

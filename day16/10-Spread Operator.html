@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Obje üzerinde spread kullanımına bakalım -->
+
+
+
+    <script>
+
+        const person = {
+            name: "John",
+            surname: "Doe",
+            age: 30 ,
+            city: "Istanbul",
+            country: "Turkey",
+            salary: 10000
+        };
+
+        const person1 =person ;
+        person1.name = "Abdullah";
+        person1.surname = "Çalışkan";
+        person1.city = "Trabzon";
+
+
+        console.log(person, person1);//Her ikisi de aynı olduğu için birindeki bilgileri değiştirdiğimizde diğerinde de değişmiş oluyor ve sonuçta ikisinde de aynı sonucu görürüz
+
+        //Peki spread kullanılarak  bir nesneden nasıl yeni bir obje oluşturabiliriz 
+
+        const person2 = {...person} //Bu şekilde spread kullanılarak bir objeden yeni bir nesne ürettik Üretilen bu nesne bir önceki nesnenin aynısıdır Ancaaaaaaak diğer obje ile herhangi bir bağı yoktur  Ve bu obje üzerinde yapılacak değişiklikler onu etkilemeyeceği gibi onun üzerinde yapılacak değişiklikler de bunu etklileme İşte bu şekilde spread kullanılarak bir objeden ondan bağımsız bir şekilde kopyasını oluşturmaya SHALLOW COPY denir
+
+        console.log(person2);
+        person2.name = "Zehra";
+        console.log(person2)//Gördüğümüz gibi ismi değiştirdik ancak değişiklik  sadece person2 objesinde oldu
+
+
+        //Yeni obje oluşturken değişikleri ilk aşamada doğrudany apabiliyoruz Bu da objeler açısından güzel bir durum Yen ibir key-value değeri de eklenebilir
+        
+        const person3 ={...person , name :"Zeynep"}
+        console.log(person3);
+        //delete person3.age;  //Bu şekilde de herhang bir key-value değerini silebiliriz 
+        console.log(person3);
+
+        /* NOT
+        Burada spread ile  yeni bir obje oluştururken  normal parantez değil de köşeli parantez kullandığımıza dikkat edelim  */
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

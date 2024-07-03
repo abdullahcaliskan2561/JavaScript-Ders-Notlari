@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- DESTRUCTURING -->
+    <!-- Bir nesnenin değerlerinin değişkenlere açılması işlemine
+destructuring denir. -->
+
+<script>
+    //let {variable1 , variable2} =object;//Kullanımı bu şekildedir
+
+    const student = {
+            firstName: "Ali",
+            lastName: "Gel",
+            no: "234",
+            phone: "2342342342"
+        };
+
+        const {firstName , lastName} =student ;
+        console.log(firstName);//Ali
+        console.log(lastName);//Gel
+
+
+
+        const emplooyee = {
+            firstName2: "Ali",
+            lastName2: "Gel",
+            no: "234",
+            phone: "2342342342",
+            address: {
+                city: "Istanbul",
+                country: "Turkey"
+            }
+        }
+
+        //const message1= `${emplooyee.firstName} ${employee.lastName} isimli personel in kod numarası ${emplooyee.no} dur ve kendisine ${emplooyee.phone} nolu telefondan ulaşılabilir `
+
+        const {firstName2,lastName2,no ,phone} =emplooyee ;
+         const message1 = `${firstName} ${lastName} isimli personel in kod numarası ${no} dur ve kendisine ${phone} nolu telefondan ulaşılabilir `
+
+         console.log(message1)
+        
+
+</script>
+
+
+    
+</body>
+</html>

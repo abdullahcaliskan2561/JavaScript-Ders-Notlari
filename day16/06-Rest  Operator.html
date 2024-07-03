@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- REST
+
+   Farklı değişkenlerden gelen verileri bir dizi içinde toplar -->
+
+   <script>
+
+    /* Örnek:
+Toplama işlemi yapan bir fonksiyon yapınız. Ancak bu fonksiyona farklı miktarda sayı parametre olarak gönderilebilmelidir. */
+
+//Eğer bunu normal JS ile yapsa idik 
+const sum1= (a , b) =>{
+       return a + b}
+console.log(sum1(10,20));  //30---şeklinde yazmamız gerekecekti 
+
+//Şimdi aynı örneği birden çok parametre alacak şekilde  rest ile yapalım
+
+const sum2 = (...numbers) =>{
+    //console.log(numbers);//1.yazılan
+    const total = numbers.reduce((a,b) => a + b , 0  );//4.yazılan
+    return total ;//5.yazılan
+}
+//console.log(sum2());//Hiçbir değer vermediğimizde boş bir dizi döndürdüğünü görürüz []  //2.yazılan
+//console.log(sum2(2,3,6,5,4,));//(5) [2, 3, 6, 5, 4]--Verdiğimiz değerleri bir diziye   dönüştürerek verdi şimdi de  //3.yazılan
+//ilk 3 yazılan kod dizi oluşumunu görmek için yazıldı
+
+console.log(sum2(6,5,4,3,2,1));//21--Bu şekilde kaç değer gönderirsek gönderelim hepsini toplar ve geri döndürür
+
+
+
+
+
+   </script>
+    
+</body> 
+</html>
