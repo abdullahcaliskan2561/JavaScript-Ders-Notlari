@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- SORU
+     Asenkron bir yapının içerisinden değer döndürülebilir mi,Nasıl değer döndürülür 
+     Asenkron çalışan fonksiyonlardan veri döndürmek için CALLBACKS fonksiyonlar kullanılır-->
+
+     <!-- Aşağıda ilk örnekte gördüğümüz gibi asenkron yapılardan değer döndürülemiyor Ancak bir alttaki örnekteki gibi return yaparak değer alabiliyoruz Ama bizim istediğimiz bu değildi İşte asenkron yapılarda değer döndürmek için  bir sonraki sayfada göreceğimiz CALLBACKS fonksiyonlar kullanılır   -->
+
+
+
+    <script>
+
+        const getData = () => {
+            setTimeout(() => {
+                return "Hello setTimeout";
+            }, 1000)
+            console.log("Hello 1");
+        }
+
+        console.log("Hello 2");
+        const res = getData();
+        console.log(res);
+        console.log("Hello 3");
+
+        //Çıktı şu şekilde olacaktır
+        //Hello 2-- Hello 1 --Undefined --Hello 3
+        //Burada görüldüğü gibi Hello 2 yazdırıldıktan sonra get Data fonksiyonuna gider ve oradali setTime out u görür Beklemeye alır ve Hello 1 e geçer Daha sonra çağrıldığı yere 22. satıra döner ve  Hello  1 yazılır SetTime out dan herhangi bir değer dönmediği için undefined yazar ve sonra da Hello 3 yazdırılır
+
+        console.log("---------------------------");
+
+
+
+        const getData2 = () => {
+            setTimeout(() => {
+                return "Hello setTimeout";
+            }, 1000)
+            console.log("Hello 1");
+            return "Hello return";
+        }
+
+        console.log("Hello 2");
+        const res2 = getData2();
+        console.log(res2);
+        console.log("Hello 3");
+
+        //Bu şekilde yaptığımızda fonksiyonun undefined dönmesini engellemiş oluyoruz Önce Hello 2 yazdırılır  getData2 den   setTimeout kısmı atlanır Hello 1 yazdırılır sonra Hello return yazdırılır ve sonda da Hello 3 yazdırılır
+
+        //Asenkron yapılar her zaman en sona atılır
+
+    </script>
+
+</body>
+
+</html>

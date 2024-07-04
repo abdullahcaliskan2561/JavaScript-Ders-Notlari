@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Synchronous---Senkron yapıda bir işlem bitmeden diğer işleme geçmez Once o işlem biter sonra diğerine geçer 
+ Asynchronous---İşlem yaparken sıra önceliğine dikkat edilmez 
+ -->
+
+    <!-- Javscript senkron bir yapıda çalışır(Single Tehread). Yani kodlar sırayla çalıştırılmaktadır. Ancak bazı durumlarda asenkron moda geçerek gereksiz beklemelerin önüne geçer.
+
+
+    Çekirdek kullanımı ile ilgili olan kısım,
+    Bir çekirdeğin aynı anda birden fazla işi yapabilmesine Multi Threaading,birden fazla çekirdek veya birden fazla işlemci olmasın da multi process denir
+ -->
+
+
+    <!--   Event listeners
+        setTimeout
+        setInterval
+        Promise
+        fetch
+        XmlHttpRequest
+        Stream
+        Worker
+
+        Bunlar JS engineleri tarafından çalıştırılmaz Bunlar browser API si olduğu için JS bunları browser a gönderir  ve çalışmasına devam eder
+ -->
+
+   
+
+
+
+
+ <script>
+
+        for (let i = 0; i < 20; i++) {
+            console.log(`Hello ${i}`);
+        }
+
+        console.log("-------------------------")
+
+            setTimeout ( () =>{
+                console.log("Timeout gecikmesi 1 saniye");
+            },1000)//0 Sıfır bile yazsak bu en sonda olur her zaman Sürenin bir önemi yok JS bunu her zaman en sonda çalıştırır JS bu kısmı beklemez 
+
+
+
+        console.log("-------------------------")
+
+
+
+        for (let i = 0; i <5; i++) {
+            console.log(`Merhaba ${i}`);
+        }
+
+
+
+
+
+        const getData = () => {
+            setTimeout(() => {
+                console.log("Bu kısım bekleniyor");
+            })
+            console.log("Hello 1");
+        }
+
+        console.log("Hello 2");
+        getData();
+        console.log("Hello 3"); 
+        //Çıktı sırası şu şekildedir
+        //Hello 2--Hello --Hello --Bu kısım bekleniyor
+
+        //Burada yazılan getData fonksiyonunun bir değer return etmesi ve değişkene atanıp çağrılması durumunda neler olur ona da 05-04-Synchronous vs Asynchronous dosyasında bakalım
+
+
+
+
+ </script>
+
+
+
+
+    
+</body >
+</html >

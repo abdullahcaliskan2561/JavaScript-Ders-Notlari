@@ -43,6 +43,32 @@ destructuring denir. -->
          const message1 = `${firstName} ${lastName} isimli personel in kod numarası ${no} dur ve kendisine ${phone} nolu telefondan ulaşılabilir `
 
          console.log(message1)
+
+         //Destruction yaparken de yine aynı şekilde köşeli parantez kullanıyoruz
+         //Yukarıdaki örneğimizde firstName ve LastName i değişkenlere atayıp o şekilde çıktısını aldık 
+         //Şimdi aynı işlemi fonksiyon olarak nasıl yapabiliriz ona bakalım
+
+         const emplooyee2 = {
+                firstName2: "Ali",
+                lastName2: "Gel",
+                no: "234",
+                phone: "2342342342",
+                address: {
+                    city: "Istanbul",
+                    country: "Turkey"
+                }
+            }
+
+            function sayHello ({firstName2,lastName2}){
+                console.log(`Merhaba ${firstName2} ${lastName2}`);
+            }
+
+            sayHello(emplooyee2);
+            //Burada fonksiyona parametre olarak bir obje gönderdik Ama şu kısmına dikkat edelim fonksiyon a gönderdiğimiz obje köşeli parantezler içerisinde ve o köşeli parantezleri bir normal parantez içerisine alarak parametre olarak ve en sonunda da fonksiyonu çağırdık
+
+
+            //Fonksiyon parametre olarak nesne alırken, eğer süslü parantezler içinde nesnenin key leri yazılırsa yine destructuring yapılmış olur.
+
         
 
 </script>

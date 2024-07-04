@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        const siparisVer = (cb) => {
+            console.log("Sipariş verildi");
+            setTimeout(() => {
+                console.log("Sipariş hazırlandı")
+                cb("Lahmacun");
+            },4000)
+            
+
+        }
+        
+
+        console.log("Avm ye gittik");
+        console.log("Bowling oynadık");
+        console.log("Karnımız acıktı");
+        siparisVer((siparis)=>{
+            console.log("Siparişinizi alabilirsiniz")
+            console.log(`${siparis} yedik`)
+        });  
+        console.log("Ayakkkabı bakmaya gittik");
+    </script>
+
+    
+</body>
+</html>
