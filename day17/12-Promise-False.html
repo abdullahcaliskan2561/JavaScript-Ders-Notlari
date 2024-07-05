@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 id="lblTitle">Hello</h1>
+    <button id="btnGetUser">Get User</button>
+
+    <script>
+
+        const getUser = () => new Promise((resolve, reject) => {
+
+            //Bu bölümde asenkron çalışan çeşitli kodlar olduğunu farzedelim Örneğin harici bir servise bağlantı kodları olabilir Buradan bir data geri geliyor olabilir
+
+            setTimeout(() => {
+                const ok = false;
+                const data = { fistName: "John", lastName: "Doe" };
+
+                if (ok) {
+                    resolve(data)
+                }
+                else {
+                    reject()
+                }
+
+            }, 3000);
+        })
+        document.getElementById("btnGetUser").addEventListener("click", () => {
+            const lblTitle = document.getElementById("lblTitle");
+
+            getUser().then((data) => {
+                lblTitle.textContent = `${data.fistName} ${data.lastName}`;
+            }).catch (()=>alert("Bir hata oluştu"))   
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!--   Promise yapıları, callback ler gibi asenkron sonuçları işleyebilmek için kullanılan,
+    callback lerdeki bazı sorunların da ortadan kaldırıldığı daha güvenilir yapılardır.
+    İç içe callback çağrıldığında oluşan callback sorunları
+     Callback’in beklenenden erken çağırılması
+     Callback’in hiç çağırılmaması
+     Callback’in beklenilenden az veya çok çağırılması
+     Gerekli parametreleri doğru bir şekilde alamaması
+     Hataların yutulması
+     -->
+
+    //Oluşabilecek problemler tek callback de değil iç içe çağrılan callback lerde meydana gelebilmektedir Tek olarak
+    kullanılan callback ler çok yaygın ve güvenlidir
+
+
+    <!-- PROMISE---4 Kavram vardır bilinmesi gereken
+      1---Hamburger siparişi verdik. Bize söz verdiler.                (Promise) 
+      2---Indicator, hamburger hazır olunca haber verecek. Bekliyoruz. (Pending)
+      3---Hamburger başarılı bir şekilde gelirse                       (resolved)
+      4---Hamburger yerine bir sorun oluşursa                          (rejected)
+       -->
+
+    <script>
+        //Defining Promise Function --Tanımlaması bu şekilde 
+        const soz1 = () => {
+                return new Promise((resolve, reject) =>{
+                    if (herseyYolunda){
+                    resolve('İşlem tamam!');
+                    } else {
+                    reject('Bir sıkıntı var');
+                    }
+                })
+            }
+        //NewPromise 2 tane callback alır Biri resolve diğeri reject Eğer herşey yolunda giderse geri dönüş resolve ile yapılır olumsuz bir durum olursa geri dönüşler reject ile yapılır 
+
+        //Calling Promise Function
+        soz1().then(cevap =>{
+            console.log(cevap); 
+        }).catch(hata =>{
+            console.log(hata);          
+        })
+
+        //Resolve ile yapılan dönüşler then de karşılanır 
+        //Reject ile yapılan dönüşler catch de karşılanır
+
+    </script>
+</body>
+
+</html>
