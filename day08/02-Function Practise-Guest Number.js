@@ -5,9 +5,6 @@ const txtResult = document.querySelector("#txtResult");
 const guessCountDisplay = document.querySelector("#guessCount");
 
 
-
-
-
 let randomNumber = 0;
 const minRandomNumber = 1;
 const maxRandomNumber = 100;
@@ -37,7 +34,6 @@ const reset = () => {
     guessCount.innerHTML = "";
 
 }
-
 
 //Tahmin et butununa basıldığında çalışacak fonksiyon
 function guess() {

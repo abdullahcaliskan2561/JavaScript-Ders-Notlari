@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>09-Spread Operator</title>
 </head>
 <body>
 
     <!-- İki farkli diziyi spread kullanarak birleştirelim -->
-
     <script>
         let citiesOfTurkey = ["Istanbul", "Ankara", "Izmir", "Bursa"];
         let citiesOfGermany = ["Berlin", "Hamburg", "München"];
@@ -26,16 +25,12 @@
         const totalNumbers =[...numbers1, ...numbers2];
         console.log(totalNumbers);
 
-
-
         //Bir dizi içerisindeki tekrar eden elemanları silip yeni bir dizi nasıl elde edilir
 
         let colors =["red", "red", "red", "blue", "blue", "green", "green", "green","orange"];
         let uniqueColors = [...new Set(colors)];
         console.log(uniqueColors);//(4)['red', 'blue', 'green', 'orange']
 
-
-    </script>
-    
+    </script>   
 </body>
 </html>

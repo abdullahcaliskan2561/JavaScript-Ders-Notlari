@@ -12,8 +12,6 @@ btnAverage.addEventListener("click", () => {
     const score2 = txtScore2.value
     const score3 = txtScore3.value
 
-
-
     if(!isScoreValid(score1) || !isScoreValid(score2) || !isScoreValid(score3)){
         alert("Please enter valid scores");   
         return;
@@ -27,21 +25,15 @@ btnAverage.addEventListener("click", () => {
     
 });
 
-
-
-
 //Inputtan gelen verilerin kontrolünü yapacak fonksiyon--1
 const isScoreValid = (score) => {
     return (score || score === 0) && !isNaN(score) && score <= 100 && score >= 0;
 }
 
-
 //3 sayının ortalamasını alacak fonksiyon--2
 const getAverage = (score1, score2, score3) => {
     return (Number(score1) + Number(score2) + Number(score3)) / 3;
 }
-
-
 
 //Ortalamayı harf notunu çevirecek fonksiyon--3
 const converteScoreToLetter = (average) => {

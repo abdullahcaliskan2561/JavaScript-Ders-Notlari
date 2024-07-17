@@ -14,8 +14,6 @@ const loadData =()=>{
 }
 loadData();
 
-
-
 /* Örneğin biz save butonuna bastığımızda select te görünen ülke adı değil de o ülkeye ait başka bir bilginin backend e gitmesini istiyorsak onu da şu şekilde yapabiliriz  Options kısmına 9.satır şu şekilde yazmalıyız  */
 options += `<option value="${country.cca2}"> ${country.name.common}</option>`; //Bu şekilde yazdığımızda cca 2 bilgisi backend e gönderdilir
 

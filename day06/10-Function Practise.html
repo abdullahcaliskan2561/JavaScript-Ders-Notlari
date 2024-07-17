@@ -4,17 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>10-Function Practise</title>
 </head>
 
 <body>
 
-    <!--PRACTISE 
-        Bir sayının asal olup olmadığını bulan fonksiyonu yazınız.
- -->
-
-
-
+    <!--PRACTISE :Bir sayının asal olup olmadığını bulan fonksiyonu yazınız.-->
 
     <input type="number" id="txtNum">
     <button onclick="calculate()">Calculate</button>
@@ -23,11 +18,6 @@
     <input type="number" id="txtNum2">
     <button onclick="calculate2()">Calculate2</button>
     <p id="result2"></p>
-
-
-
-
-
 
     <script>
 
@@ -46,9 +36,6 @@
         }
 
         /* Burada yazdığımız isPrimeNumber fonksiyonu generic bir fonksiyondur  Hiçbir yerle bir bağımlılığı yoktur ve sadece bir iş yapar Bir sayı alır onu kontrol eder ve asal olup olmadığını geri döndürür true veye false olarak döndürür */
-
-
-
 
             function calculate() {
                 const inputNum = parseInt(document.querySelector("#txtNum").value);
@@ -74,10 +61,7 @@
             }
             /* $ ve köşeli parantez içerisine ternary yazabiliyoruz */
 
-
             /* Buradaki calculate() fonksiyonu ise bir olay fonksiyonu- event handler dır Butona bağımlıdır Çalışabilmesi için butona basılmalıdır  JavaScript'te olay fonksiyonları, belirli olaylar meydana geldiğinde yürütülen fonksiyonlardır. Bu fonksiyonlar, kullanıcı etkileşimleri veya sayfa üzerinde gerçekleşen değişiklikler sonucunda tetiklenir. Olay işleyicileri, HTML elemanlarına doğrudan atanabilir veya JavaScript kullanılarak dinamik olarak eklenebilir. Bu sayede, web sayfalarında etkileşimli ve dinamik davranışlar oluşturulabilir.*/
-
-
 
 
             //FARKLİ BİR ÇÖZUM DAHA
@@ -99,9 +83,6 @@
                     alert("Lütfen geçerli bir sayi giriniz...");
                 }
             }
-
-
-
 
             /* 
             1. Single Responsibility Principle (SRP) - Tek Sorumluluk Prensibi
@@ -129,25 +110,8 @@ SRP (Single Responsibility Principle): Her fonksiyon veya modül, tek bir soruml
 OCP (Open/Closed Principle): Kod, genişletmeye açık ama değiştirmeye kapalı olmalıdır.
 LSP (Liskov Substitution Principle): Alt sınıflar, üst sınıfların yerine geçebilmelidir.
 ISP (Interface Segregation Principle): Kullanıcılar, ihtiyaç duymadıkları yöntemlerle karşı karşıya kalmamalıdır.
-DIP (Dependency Inversion Principle): Yüksek seviyeli modüller, düşük seviyeli modüllere bağımlı olmamalıdır.
-
-
-
-
-
-             */
-
-
-
-
-
-
-        
-            
-        
+DIP (Dependency Inversion Principle): Yüksek seviyeli modüller, düşük seviyeli modüllere bağımlı olmamalıdır.*/
 
     </script>
-
 </body>
-
 </html>

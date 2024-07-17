@@ -9,8 +9,6 @@ let flag =true;
 //veya bu üçünü all yaparak da seçebilirdik
 //const clockItems = document.querySelectorAll("clock li"); şeklinde 
 
-
-
 //Saati başlatacak bir fonksiyon yazalım
 const startClock = () => {
     timer =setInterval(() => {
@@ -30,13 +28,10 @@ const startClock = () => {
             
         }
 
-
         //6.satırdaki gibi yazarsak şu şekilde yerleştirmemiz gerekecekti
         //clockItems[0].innerHtml = hour;
         //clockItems[2].innerHtml = minute;
-       
-    
-        
+               
     },1000)
 }
 

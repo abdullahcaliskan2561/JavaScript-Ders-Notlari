@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>02-Iterator Methods for in</title>
 </head>
+
 <body>
-
-
-
     <!-- for in -->
-    
-    
     <!-- For döngüsünün kısaltılmış halidir. (sayaç ve koşul kullanmaya gerek yok.)Özellikle dizi ve nesnelerin iterasyonu için geliştirilmiştir.Değişken içine
     otomatik olarak elemanın indis numarası gelir. -->
-    
+
     <!-- Dizi ve nesnelerde çalışır -->
-    
-    
     <!--
      for( degisken in diziAdi){
     //Döngü içi
     } 
     -->
-    
+
     <script>
         //Örnek Çalışma----1 
 
@@ -34,37 +29,26 @@
             console.log(animals[i]);//fil deve kuş inek kedi
         }
 
+        //Örnek Çalışma----2
+        //Farklı dizilerde verilen isim ve soyisimleri tek bir dizi de birleştirme yapalım
+        //Bu örnekte şu kısım önemli her dizideki değerin karşılığın olması gerekiyor Karşılığı olmayınca undefined olarak görebiliriz 
 
+        const names = ["Ahmet", "Mehmet", "Ali", "Veli"];
+        const surnames = ["Yılmaz", "Demir", "Kara", "Aydın"];
 
-
-
-
-         //Örnek Çalışma----2
-         //Farklı dizilerde verilen isim ve soyisimleri tek bir dizi de birleştirme yapalım
-         //Bu örnekte şu kısım önemli her dizideki değerin karşılığın olması gerekiyor Karşılığı olmayınca undefined olarak görebiliriz 
-
-
-
-         const names =["Ahmet", "Mehmet", "Ali", "Veli"];
-         const surnames=["Yılmaz", "Demir", "Kara" , "Aydın"];
-
-         const birlestir  = ( x,y) =>{
+        const birlestir = (x, y) => {
             let nameAndSurname = [];
-            for(let i in x){ //Burada ilk isim olduğu için x yazdık y de yazılabilirdi
-                nameAndSurname.push(x[i]+" "+y[i]);
+            for (let i in x) { //Burada ilk isim olduğu için x yazdık y de yazılabilirdi
+                nameAndSurname.push(x[i] + " " + y[i]);
                 //52.satırı şu şekilde de yazılabilirdi
                 //nameAndSurname[i]=`${x[i]} ${y[i]}`
             }
             return nameAndSurname;
-         }
+        }
 
-         console.log(birlestir(names,surnames));//(4) ['Ahmet Yılmaz', 'Mehmet Demir', 'Ali Kara', 'Veli Aydın']
-
-
-
+        console.log(birlestir(names, surnames));//(4) ['Ahmet Yılmaz', 'Mehmet Demir', 'Ali Kara', 'Veli Aydın']
 
     </script>
-
-    
 </body>
+
 </html>

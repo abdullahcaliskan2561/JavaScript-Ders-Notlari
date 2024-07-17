@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>08-Callback</title>
 </head>
 
 <body>
@@ -19,7 +19,6 @@
         <span id="lblRandom"></span>
     </div>
 
-
     <script>
 
         const btnDistance = document.getElementById("btnDistance");
@@ -33,8 +32,6 @@
                         //Google aldığı 2 koordinat arasıdaki mesafeyi hesaplayıp bize geri veriyor
             const distance =Math.floor(Math.random() * (coord1 -coord2)+coord2) ;
             
-           
-
             cb(distance);
 
             }, 3000)
@@ -50,18 +47,10 @@
             lblRandom.textContent = Math.floor(Math.random() * 100);
 
         })
-
-        
-        
-        
-        
-        
+            
         //Görüldüğü gibi GetRandomNumber fonksiyonu çalışırken GetCoordinates foknksiyonunun gecikmesinden etkilenmemektedir
         //Bir önceki örnekte bir tane parametre olduğundaki çözümü gördük bu örnekte ise iki tane parametre olduğundaki çözümü gördük
 
     </script>
-    
-
 </body>
-
 </html>

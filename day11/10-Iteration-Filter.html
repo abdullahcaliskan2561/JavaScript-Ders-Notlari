@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>10-Iteration Filter</title>
 </head>
 <body>
 
@@ -31,28 +31,18 @@ değiştirmez. -->
 
         console.log(products.map((product)=>product.price>5000))//Bu şekikde yazdığımızda bize fiyatı 5000 den büyük olanları ve küçük olanları true ve false olarak getirdi map methodu products içerisindeki her bir değeri alır ve product un içerisine atar ve sonuc true ya da false doner
 
-
         console.log(products.filter((item) => item.price > 5000));//Filter ise sadece true dönen sonuçları getirir.
 
         //10 elemanlı bir dizimiz varsa map ile yine 10 elemanlı yeni bir yapı elde ederiz  Hiçbir zaman 9 yada 11 olmaz her zaman aynı sayıda eleman içeren yapılar elde ederiz Map ayrıca mevcut diziyi tamamen değiştirebilir Array of object alıp array e dönebiliriz.Ya da array of object alıp objeye yeni bir şeyler ekleyebiliriz
         //Filterda ise yapıyı değiştiremeyiz ama mevcut dizi üzerinde filtrelemeler yapabiliriz Belli özelliklere sahip elemanları filtreleyebiliriz.
 
-
-
-
-
         //Örnek:Koordinatlar dizisindeki negatif koordinatları seçerek bunları pozitife çevirip alt alta konsola bastıran uygulamayı yazınız.
-
 
         const koordinatlar =[-100 ,150 , -200 , 300 , -400 , 500 , -600 , -700 , 800 , -900 ];
 
        const negatifKoordinatlar=koordinatlar.filter((x)=>x<0);
        
        console.log(negatifKoordinatlar)
-</script>
-
-
-
-    
+</script>    
 </body>
 </html>

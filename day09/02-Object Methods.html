@@ -3,16 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>02-Object Methods</title>
 </head>
 <body>
-    
-
-
-
-
-
-
 
     <script>
         /* CREATING */
@@ -40,11 +33,6 @@
         console.log(yeni1);
         console.log(yeni1===person)  //true-->Referans type oldukları için bu şekilde bir nesneden çoğaltma yaparsak ikisi de aynı olur ve hem person hem de yeni1 aynı değerlerin adresini içerisinde tutar Object.create ile yapılınca nasıl olduğuna aşağıda bakalım
 
-
-
-
-
-
         const yeni2=Object.create(person);
         console.log(yeni2);
         yeni2.name="Mehmet";
@@ -58,9 +46,6 @@
         const yeni3=Object.create(person);
         console.log(yeni3) //[[Prototype]]: Objectage:40lastName:"Yılmaz"location:"Istanbul" name:"Ahmet"
         //Bu şekilde herhangi bir değer atamadan yeni obje oluşturursak [[Prototype]]: Object şeklinde görünür ve içerisinde person object in bilgilerini barındırır
-
-
-
 
         /* ASSIGNİNG */
 
@@ -80,7 +65,6 @@
         console.log(target); // { a: 1, b: 3, c: 4 }
         console.log(result); // { a: 1, b: 3, c: 4 }--b değerine sonradan 3 geldiği için sonradan gelen ilk geleni ezer 
 
-
         const car2 = {
                 brand: "Mercedes",
                 model: "X5",
@@ -93,24 +77,11 @@
         console.log(car) //{brand: 'Mercedes', model: 'X5', color: 'Red', engine: '2.0', year: 2020}--Aynı value olanlarda sonradan gelen eziyor ve olmayan da ekleniyor car objesinde year yoktu ama eklendi bu şekilde 
         console.log(car===car2) //false--car ve car2 objeleri farklı referanslardır
 
-
         //Bir nesneden tamamen bağımsız bir nesne oluşturmak için  yani kopya oluşturmak için  shallow copy-Object.assign methodunu kullanırız Shallow copy oluşturulurken {} içerisinde birleştirme yapılır ve kopya oluşturulur
 
         const car3=Object.assign({}, car);
         console.log(car3) //{brand: 'Mercedes', model: 'X5', color: 'Red', engine: '2.0', year: 2020}--Birleştirmeyi {} içerisinde yaptı ve car3 içerisine atadı
 
-    
-
-
-
-
-
-
-
-            
-        
-
-    </script>
-    
+    </script>    
 </body>
 </html>

@@ -1,60 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>01-Iterator Methods</title>
 </head>
+
 <body>
-
-
     <!-- ITERATOR METHODLAR---  Dizi elemanları döngü yoluyla dolaşmak için kullanılır-->
 
     <!-- PRACTICE
     Bir dizideki pozitif ve negatif sayıların toplamını hesaplayıp, bu toplamların farkını bulan uygulamayı for döngüsü ile yazınız. calculate() adında bir fonksiyonda hesaplamayı yapınız. 
     -->
 
-
-
     <script>
         //1-Dizimizi oluşturalım
-        const  numbers =[12,45,78,98,65,-23,78-45,-23,56,-89,123,-456,789,-654];
+        const numbers = [12, 45, 78, 98, 65, -23, 78 - 45, -23, 56, -89, 123, -456, 789, -654];
 
         //2-Hesaplama yapacak fonksiyonu yazalım
-        const calculate = (arr)=>{
+        const calculate = (arr) => {
 
             let positive = 0;
             let negative = 0;
-           
-          
-            for(let i=0;i<arr.length;i++){
-                if(arr[i]>0){
+
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] > 0) {
                     positive += arr[i];
-                }else{
+                } else {
                     negative += arr[i];
                 }
-               
-
+            }
+            return positive - Math.abs(negative);//54
         }
-        return positive-Math.abs(negative);//54
-    }
 
-
-    //3-Fonksiyonu cagıralım
-    console.log(calculate(numbers));
-
-         
-
-
-
-
-
-
-
-
-
+        //3-Fonksiyonu cagıralım
+        console.log(calculate(numbers));
 
     </script>
-    
 </body>
+
 </html>

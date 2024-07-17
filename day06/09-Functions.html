@@ -4,15 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>09-Functions</title>
 </head>
 
 <body>
-
-
-
-
-
     <script>
         //FUNCTION DECLERATION
         /* 
@@ -21,31 +16,21 @@
            //.....
            return donenDeger ;    // Fonksiyonun çağrıldığı yere döndürdüğü değer 
        }
-        let x = fonksiyonIsmi(value1,value2,value3);   //Fonksiyonun çağrılması
-         */
-
-
+        let x = fonksiyonIsmi(value1,value2,value3);   //Fonksiyonun çağrılması */
 
         /* Bir fonksiyon birden fazla iş yapmamalı----Single responsibility */
         /* Münkün olduğunca bağımlılığının az olması ----Dependency injection */
         /* Değişime kapalı gelişime açık olmalı Güncellenebilmeli ancak güncelleme yapılırken eski kodlar da tekrar düzenlenmemeli Eski kodlara düzenleme yapmadan güncelleme yapılabilmeli */
-
-
-
-
         /* Basamak basamak fonksiyonun düzenlenmesi- - - Basitten zora doğru fonksiyonun yazılması  */
         function getAge1() {
             alert(`My age is ${2024 - 2000}`); //24
         }
         getAge1();
 
-
         function getAge2(birtYear) {
             alert(`My age is ${2024 - birtYear}`);
         }
         getAge2(2001);  //23
-
-
 
         function getAge3(birthYear) {
             const dateTime = new Date();
@@ -53,8 +38,6 @@
             alert(`My age is ${currentYear - birthYear}`);  /* Burada alert e bağımlı olduğu için başka yerlerde kullanamayız bu fonksiyonu Mesela bize sadece yaş bilgisi gereken bir yerde bunu kullanamayız çünkü bu bize sonucu yas olarak değil  My age is 22 şeklinde veriyor Bu da sonucun kullanımını etkiliyor Bu sadece yaş hesaplayan bir fonksiyon olduğu için sadece yaşı hesaplamalı Onu da aşağıda görelim  */
         }
         getAge3(2002);//22
-
-
 
 
         function getAge4(birthYear) {
@@ -65,16 +48,6 @@
         let a =getAge4(2003);
         console.log(a);   //21
 
-
-
-
-
-
-
-
-
     </script>
-
 </body>
-
 </html>

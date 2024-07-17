@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>05-Switch</title>
 </head>
 
 <body>
@@ -19,8 +19,6 @@
     <button onclick="setPrice()">Calculate</button>
 
     <h2 id="result"></h2>
-
-
     <script>
         function setPrice() {
             const txtPrice = document.querySelector("#txtPrice")
@@ -49,14 +47,8 @@
             }
             result -= result * discount / 100;
 
-            document.querySelector("#result").innerText =`Urunun indirimli fiyati  ${result} 
-` 
+            document.querySelector("#result").innerText =`Urunun indirimli fiyati  ${result} ` 
         }
     </script>
-
-
-
-
 </body>
-
 </html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>04-Synchronous vs Asynchronous</title>
 </head>
 
 <body>
@@ -20,7 +20,6 @@
     Bir çekirdeğin aynı anda birden fazla işi yapabilmesine Multi Threaading,birden fazla çekirdek veya birden fazla işlemci olmasın da multi process denir
  -->
 
-
     <!--   Event listeners
         setTimeout
         setInterval
@@ -32,12 +31,6 @@
 
         Bunlar JS engineleri tarafından çalıştırılmaz Bunlar browser API si olduğu için JS bunları browser a gönderir  ve çalışmasına devam eder
  -->
-
-   
-
-
-
-
  <script>
 
         for (let i = 0; i < 20; i++) {
@@ -54,15 +47,9 @@
 
         console.log("-------------------------")
 
-
-
         for (let i = 0; i <5; i++) {
             console.log(`Merhaba ${i}`);
         }
-
-
-
-
 
         const getData = () => {
             setTimeout(() => {
@@ -78,15 +65,6 @@
         //Hello 2--Hello --Hello --Bu kısım bekleniyor
 
         //Burada yazılan getData fonksiyonunun bir değer return etmesi ve değişkene atanıp çağrılması durumunda neler olur ona da 05-04-Synchronous vs Asynchronous dosyasında bakalım
-
-
-
-
- </script>
-
-
-
-
-    
+ </script>   
 </body >
 </html >

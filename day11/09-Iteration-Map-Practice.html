@@ -3,26 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>09-Iteration Map Practice</title>
 </head>
 <body>
-
-    <!-- tl Fiyatlar dizisindeki ürünlere fiyatı 100 TL den fazla
+       <!-- tl Fiyatlar dizisindeki ürünlere fiyatı 100 TL den fazla
 olanlara %10 zam, 100 TL den az olanlara ise %15 zam
 yapılmak isteniyor.
 
 Ayrıca,zamlı olan yeni değerleri yeni bir dizide saklamak istiyoruz. 
 Bu soruyu array of object olarak çözeceğiz Normal diziden daha farklı olarak -->
-
-
-
-
-
-
-
-
-
-
 
     <script>
         const products = [
@@ -59,7 +48,6 @@ Bu soruyu array of object olarak çözeceğiz Normal diziden daha farklı olarak
         //Bu sorunun farklı bir çözümü ise şu şekildedir
 
     
-
         // Fiyatı güncelleyen ve yeni bir dizi oluşturan fonksiyon
         const updatedProducts = products.map((product) => {
             const updatedProduct = { ...product }; // Orijinal nesneyi klonla
@@ -73,14 +61,6 @@ Bu soruyu array of object olarak çözeceğiz Normal diziden daha farklı olarak
 
         console.log(updatedProducts);
 
-       
-
-      
-
-
-       
-
-    </script>
-    
+    </script>   
 </body>
 </html>

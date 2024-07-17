@@ -4,12 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Data Types</title>
 </head>
 
 <body>
-
-
 
     <script>
         /* Primitive Data Types */
@@ -34,8 +32,6 @@
         console.log(typeof(z));  //number
 
 
-
-
         //Number
         let number = 1040;
         console.log(number);  //1040
@@ -49,7 +45,6 @@
         console.log(bigNumber);  //1234n
         console.log(bigNumber ,typeof bigNumber);  //1234n 'bigint'--Bu şekilde ikinci bir yazımla da data type ını öğrenebiliriz
         //console.log(isNaN(bigNumber));----Uncaught TypeError: Cannot convert a BigInt value to a number at isNaN(<anonymous>)---Big int de isNan kontrolü yapılamaz bize hata verir 
-
 
 
         //Boolean
@@ -72,7 +67,6 @@
         console.log(isNaN(age));//Bu bir sayi olduğu için false değeri verdi
 
 
-
         //null
         let car = null;
         console.log(car);  //null---Daha sonra buna istenirse bir değer ataması yapılabilir
@@ -83,19 +77,15 @@
         console.log(isNaN(car));  //true--String değeri eklendiği için burada true değeri verdi
 
 
-
         //Symbol
         let id = Symbol("id");
         console.log(id);  //Symbol(id)---Console da kırmızı renkli olarak çıktısı görünüyor
         //console.log(isNaN(id)); -----05-Data Types.html:77 Uncaught TypeError: Cannot convert a Symbol value to a number at isNaN(<anonymous>)   Symbol için de isNan durumu kontrol edilemez  hata verir
 
 
-
         //float
         let piNumber = 3.14;
         console.log(piNumber);  //3.14
-
-
 
 
         /* Non-Primitive Data Types */
@@ -113,7 +103,6 @@
         console.log(isNaN(arr));//true--Bu bir number değildir
 
 
-
         //Object
         const person = {
             name: "Abdullah",
@@ -123,16 +112,7 @@
         console.log(person);  //{name: 'Abdullah', age: 25, country: 'Turkey'}
         console.log(typeof person); //object-- - Object lerin data type ı object tir
         console.log(isNaN(person));  //true--Bu bir number değildir
-
-
-
-
-
-
-
-
-
-           
+        
     </script>
 
 </body>

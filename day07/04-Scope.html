@@ -3,12 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>04-Scope</title>
 </head>
 <body>
-
-
-
     <script>
 
         //Değişken ve sabitlerin yaşam alanına scope denir
@@ -18,10 +15,7 @@
         //Gloobal scope--->Her yerden erişilebilen değişkenlerdir, en tepede tanımlanır.
 
         //Block scope--->Sadece tanımlandığı blok içinde( if , for , while …) geçerlidir.
-
-
-
-        
+       
             //Function scope
             const fonk1 =function (){
                 let sayi1 = 22 ;
@@ -29,7 +23,6 @@
             }
             fonk1();
             //console.log(++sayi1); //Hata- -04-Scope.html:31 Uncaught ReferenceError: sayi1 is not defined- - Sayi1 fonksion içerisinde tanımlandığı için fonksiyon dışından erişilmeye çalışıldığında hata verir
-
 
 
              //Global scope
@@ -40,7 +33,6 @@
              }
              fonk2();
              console.log(++sayi2);   //11- -  Sayi değişkeni fonksiyon dışında tanımlandığı için hem fonksiyon içinden hem de fonksiyon dışından erişilip değeri okunabilir ve değiştirilebilir
-
 
 
              //Gloobal scope ve Function scope un birlikte kullanımı
@@ -54,7 +46,6 @@
              //Sonuç olarak hem global scope da hem de function scope da ayni isimli değişken tanımlanabilir ve bunlar farklı değişkenler olarakalgılanır Yukarıdakinden bir farkı şudur orada sayi2 let olmadan tanımlanmıştı Buradaki sayi3 ise let kullanılarak tanımlandığı için bunları farklı değişken olarak tanımlıyor Ancak aynı scope içerisinde aynı değişken oluşturulmasına izin vermez tabi ki 
 
 
-
              //Block Scope
 
              const fonk4 =function(sayi){
@@ -65,10 +56,6 @@
              }
              fonk4(-3);
 
-
-
-
-
              //HOISTING
             //Javascript te default bir davranış olarak tanımlanan değişkenler ve function lar bulundukları scope ta default olarak en tepeye alınır. Böylece tanımlama yapılmadan önce kullanılabilirler. Buna hoisting denir.(JS bu işlemi kodları yorumlarken yapar)
 
@@ -77,9 +64,6 @@
             //Sadece declaration hoist edilir, initializations edilmez
 
             //Bu nedenlerden dolayı var kullanılmamalıdır
-
-
-
 
 
             //ANONYMOUS FUNCTION
@@ -98,19 +82,7 @@
             !function(){
                 alert("Hello2");
             }();
-
-
-
-
-
-
-
-
-
-
-        
-
-    </script>
-    
+            
+    </script>   
 </body>
 </html>

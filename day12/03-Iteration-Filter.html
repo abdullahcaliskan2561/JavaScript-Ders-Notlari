@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>03-Iteration Filter</title>
 </head>
 <body>
     <!-- Koordinatlar dizisindeki negatif koordinatları seçerek bunları pozitife çevirip alt alta konsolabastıran uygulamayı yazınız. -->
-
     <script>
          const products = [
                 { id: 1, name: "Laptop", price: 5000 },
@@ -27,7 +26,6 @@
             .forEach((product)=>console.log(product));
             //Bu şekilde art arda yaptığımız işleme pipeline denir.Bu products örneğimiz için yaptık şimdi de koordinatlar için yapalım Ancak burada biz .map((product)=>product.price*1.15) yazdığımızda sadece fiyatları return etmiş oluyoruz Objenin isimleri görünmüyor Eğer ki biz hem isimleri hem de fiyatları yani objenin  tamamını return etmek istiyorsak şu şekilde yazmalıydık Tabi bu durumda süslü parantez kullanmalıyız  .map((product)=>{product.price*=1.15;return product;}) Bu şekilde bize obje olarak return edecektir
 
-
             const koordinatlar =[-200 ,300 ,-400 ,500 ,-600 ,700 ,-800 ,900 ,-1000 ,1100];
 
             const negatifKoordinatlar=koordinatlar.filter((koor)=>koor<0)
@@ -35,10 +33,6 @@
             .forEach((koor)=>console.log(koor));
             //Bu şekilde de yine pipeline yaparak negatifleri seçtik onları pozitife çevirdik ve hepsini tek tek yazdırdık.
 
-
-    </script>
-
-
-    
+    </script>    
 </body>
 </html>

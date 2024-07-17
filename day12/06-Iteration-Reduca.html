@@ -4,16 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>06_Iteration Reduce</title>
 </head>
-
 <body>
-
     <!-- 
     Bir Firma, 3000 TL den az olan maaşlara %10 zam yapmak istiyor ve zam yapılan bu kişilere
 toplam kaç TL ödeneceğini bilmek istiyor. İlgili programı yazınız.
      -->
-
     <script>
         const arr = [1000, 2000, 3000, 40000, 5000, 6000, 7000, 8000, 9000, 10000];
 
@@ -21,7 +18,6 @@ toplam kaç TL ödeneceğini bilmek istiyor. İlgili programı yazınız.
             .filter(x => x < 3000)
             .map(x => x * 1.1)
             .reduce((x, y) => x + y, 0);
-
 
         /* 
         FOR ve IF ile de yapılabilir
@@ -32,11 +28,8 @@ toplam kaç TL ödeneceğini bilmek istiyor. İlgili programı yazınız.
             }
            } 
         */
-
         console.log(totalSalary);
 
     </script>
-
 </body>
-
 </html>

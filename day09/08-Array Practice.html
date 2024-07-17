@@ -4,21 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>08-Array Practice</title>
 </head>
 
 <body>
 
     <!-- Bir dizi içindeki en büyük sayıyı bulan programı yazınız. -->
 
-
     <h3 id="myArray"></h3>
     <button id="btnGetGreatestNumber">Get Greatest Number</button>
     <h4 id="greatestNum"></h4>
-
-
-
-
 
     <script>
         const arr = [12, 546, 2, 65, 32, 676, 232, 56, 312, 5, 890, 34];//1
@@ -29,16 +24,11 @@
 
         myArrayEl.innerHTML = arr; //3
 
-
-
-
         //5
         //Butona tıkladığımızda en buyük sayıyı ekrana yazdıran bir fonksiyon yazalım
         btnGetGreatestNumEl.addEventListener("click", () => {
             greatestNumEl.innerHTML = getMaxNumber(arr);
         });
-
-
 
         //4
         //Verilen sayılardan en büyüğünü veren bir fonksiyon yazalım 
@@ -57,27 +47,6 @@
 
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </script>
-
-
-
 </body>
-
 </html>

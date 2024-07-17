@@ -1,109 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02-Array of Object</title>
 </head>
+
 <body>
+  <!-- Elemenaları object olan dizilere array of object denir. -->
 
-    <!-- Elemenaları object olan dizilere array of object denir. -->
+  <select name="" id="ddlCars"></select>
 
-    <select name="" id="ddlCars"></select>
+  <script>
 
-
-
-
-
-
-    <script>
-
-  
-
-    
-const cars = [
-  {
-    marka: "Toyota",
-    model: "Corolla",
-    motor: "1.8L I4",
-    klima: true
-  },
-  {
-    marka: "Honda",
-    model: "Civic",
-    motor: "2.0L I4",
-    klima: true
-  },
-  {
-    marka: "Ford",
-    model: "Mustang",
-    motor: "5.0L V8",
-    klima: true
-  },
-  {
-    marka: "BMW",
-    model: "3 Series",
-    motor: "2.0L I4",
-    klima: true
-  },
-  {
-    marka: "Mercedes-Benz",
-    model: "C-Class",
-    motor: "2.0L I4",
-    klima: true
-  },
-  {
-    marka: "Audi",
-    model: "A4",
-    motor: "2.0L I4",
-    klima: true
-  },
-  {
-    marka: "Volkswagen",
-    model: "Golf",
-    motor: "1.4L I4",
-    klima: true
-  },
-  {
-    marka: "Nissan",
-    model: "Altima",
-    motor: "2.5L I4",
-    klima: true
-  },
-  {
-    marka: "Hyundai",
-    model: "Elantra",
-    motor: "2.0L I4",
-    klima: true
-  },
-  {
-    marka: "Kia",
-    model: "Optima",
-    motor: "2.4L I4",
-    klima: true
-  }
-];
+    const cars = [
+      {
+        marka: "Toyota",
+        model: "Corolla",
+        motor: "1.8L I4",
+        klima: true
+      },
+      {
+        marka: "Honda",
+        model: "Civic",
+        motor: "2.0L I4",
+        klima: true
+      },
+      {
+        marka: "Ford",
+        model: "Mustang",
+        motor: "5.0L V8",
+        klima: true
+      },
+      {
+        marka: "BMW",
+        model: "3 Series",
+        motor: "2.0L I4",
+        klima: true
+      },
+      {
+        marka: "Mercedes-Benz",
+        model: "C-Class",
+        motor: "2.0L I4",
+        klima: true
+      },
+      {
+        marka: "Audi",
+        model: "A4",
+        motor: "2.0L I4",
+        klima: true
+      },
+      {
+        marka: "Volkswagen",
+        model: "Golf",
+        motor: "1.4L I4",
+        klima: true
+      },
+      {
+        marka: "Nissan",
+        model: "Altima",
+        motor: "2.5L I4",
+        klima: true
+      },
+      {
+        marka: "Hyundai",
+        model: "Elantra",
+        motor: "2.0L I4",
+        klima: true
+      },
+      {
+        marka: "Kia",
+        model: "Optima",
+        motor: "2.4L I4",
+        klima: true
+      }
+    ];
 
 
-//Sayfa açıldığında slect içerisinde istediğimiz bilgilerin görünmesini sağlayan bir form hazırlayalım.
+    //Sayfa açıldığında slect içerisinde istediğimiz bilgilerin görünmesini sağlayan bir form hazırlayalım.
 
-const fillCars = () => {
-    const ddlCars=document.querySelector("#ddlCars");
+    const fillCars = () => {
+      const ddlCars = document.querySelector("#ddlCars");
 
-    for(let i =0 ; i <cars.length ; i++){
+      for (let i = 0; i < cars.length; i++) {
         //ddlCars.innerHTML += `<option value="${i}">${cars[i].marka} - ${cars[i].model}</option>`
         //94.satırı şu şekilde de yazabiliriz sadece isimler için
         //ddlCars.innerHTML +=`<option>${cars[i].marka} </option> ` //Sadece Marka isimlerini getirir
-        ddlCars.innerHTML +=`<option>${cars[i].model} </option> ` //Sadece model isimlerini getirir
+        ddlCars.innerHTML += `<option>${cars[i].model} </option> ` //Sadece model isimlerini getirir
 
+      }
     }
-}
-fillCars();
+    fillCars();
 
-
-    </script>
-
-
-    
+  </script>
 </body>
 </html>

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>06-Callback</title>
 </head>
+
 <body>
 
     <!-- Asenkron çalışan fonksiyonlardan veri döndürmek için CALLBACK fonksiyonlar kullanılır.
@@ -12,43 +14,39 @@
     Diğer yöntem de asenkron olmaktan çıkarıp senkron olarak işlem yapmaktır-->
 
     <script>
-         const getData = () => {
-                setTimeout(() => {
-                    return "Hello setTimeout";
-                }, 1000)
-                console.log("Hello 1");
-               
-            }
+        const getData = () => {
+            setTimeout(() => {
+                return "Hello setTimeout";
+            }, 1000)
+            console.log("Hello 1");
+        }
+        console.log("Hello 2");
+        const res = getData();
+        console.log(res);
+        console.log("Hello 3");//Hello 2--Hello 1--Undefined --Hello 3
+        //Daha önce gördüğümüz gibi buradaki asenkron yapıdan "Hello SetTimeout" ifadesini çıktı olarak alamadık Şimdi callback kullanarak aynı asenkron yapıdan nasıl değer döndüreceğimize bakalım
 
-            console.log("Hello 2");
-            const res = getData();
-            console.log(res);
-            console.log("Hello 3");//Hello 2--Hello 1--Undefined --Hello 3
-            //Daha önce gördüğümüz gibi buradaki asenkron yapıdan "Hello SetTimeout" ifadesini çıktı olarak alamadık Şimdi callback kullanarak aynı asenkron yapıdan nasıl değer döndüreceğimize bakalım
+        //Şu şekilde işlem yapabiliriz
+        //1-const res değişkenini siliyoruz sadece getData() kalıyor  2- getData() fonksiyonuna parametre olarak callback isminde değer veriyoruz (Kısaca cb olarak Sonra da setTimeout fonksiyonu içerisinde callbcak fonksiyonu çağırıyoruz ( return "Hello setTimeout"; ifadesi yerine bu çağırma ifadesini yazıyoruz ) Daha sonra aşağıda kalmış olan getData()fonksiyonuna paremetre olarak  bir fonksiyon yazıyoruz ve yazdırılacak değer olarak da bizim setTimeout() ifademizdeki yazdırılmayan değeri bu fonksiyona veriyoruz Ve yazılan gecikme kadar sonra ifadeyi konsolda görürüz 
 
-            //Şu şekilde işlem yapabiliriz
-            //1-const res değişkenini siliyoruz sadece getData() kalıyor  2- getData() fonksiyonuna parametre olarak callback isminde değer veriyoruz (Kısaca cb olarak Sonra da setTimeout fonksiyonu içerisinde callbcak fonksiyonu çağırıyoruz ( return "Hello setTimeout"; ifadesi yerine bu çağırma ifadesini yazıyoruz ) Daha sonra aşağıda kalmış olan getData()fonksiyonuna paremetre olarak  bir fonksiyon yazıyoruz ve yazdırılacak değer olarak da bizim setTimeout() ifademizdeki yazdırılmayan değeri bu fonksiyona veriyoruz Ve yazılan gecikme kadar sonra ifadeyi konsolda görürüz 
+        const getData2 = (cb) => {
+            setTimeout(() => {
+                cb()
+            }, 1000)
+            console.log("Hello 1");
 
-            const getData2 = (cb) => {
-                    setTimeout(() => {
-                       cb() 
-                    }, 1000)
-                    console.log("Hello 1");
+        }
 
-                }
+        console.log("Hello 2");
+        getData2(() => {
+            console.log("Hello setTimeout");
+        });
+        console.log("Hello 3");//Hello 2 --Hello 1 --Hello 3-Hello setTimeout
 
-                console.log("Hello 2");
-                 getData2(()=>{
-                    console.log("Hello setTimeout");
-                 });
-                console.log("Hello 3");//Hello 2 --Hello 1 --Hello 3-Hello setTimeout
+        //Sonuçlarda görüldüği gibi asenkron bir yapıdan en başta döndüremediğimiz Hello setTimeout ifadesini döndürmüş oluruz
 
-                //Sonuçlarda görüldüği gibi asenkron bir yapıdan en başta döndüremediğimiz Hello setTimeout ifadesini döndürmüş oluruz
-
-                //Bu şekilde zaman alacak bir durum olması durumunda (Asenkron bir durum) ilgili kodun browser tarafından çalıştırılması beklenmeden diğer kodlar çalıştırılır ve gecikme olacak kod da ilgili sürenin sonunda yazdırılmış olur
+        //Bu şekilde zaman alacak bir durum olması durumunda (Asenkron bir durum) ilgili kodun browser tarafından çalıştırılması beklenmeden diğer kodlar çalıştırılır ve gecikme olacak kod da ilgili sürenin sonunda yazdırılmış olur
 
     </script>
-    
-    
 </body>
 </html>

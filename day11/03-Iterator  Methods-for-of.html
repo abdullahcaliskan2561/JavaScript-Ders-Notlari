@@ -1,74 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>03-Iterator Methods for of</title>
 </head>
+
 <body>
 
     <!-- for of -->
-
     <!-- 
     FOR OF bir çok veri yapısı üzerinde çalışabildiği için FOR IN’e göre daha
 geniş kullanım alanına sahiptir. Diziler, Stringler v.b bir çok veri yapısında
 kullanılabilir. Değişken içine otomatik olarak elemanın değeri gelir. -->
 
-<!-- Hem dizilerde hem de  stringlerde çalışır  -->
- <!-- Dolayısıyla daha geniş kullanım alanına sahiptir -->
-  <!-- for in de sadece indeksleri dödürür for of ise değerleri döndürür Bu for in in daha gelişmiş halidir -->
+    <!-- Hem dizilerde hem de  stringlerde çalışır  -->
+    <!-- Dolayısıyla daha geniş kullanım alanına sahiptir -->
+    <!-- for in de sadece indeksleri dödürür for of ise değerleri döndürür Bu for in in daha gelişmiş halidir -->
 
-  <!--
+    <!--
    for( degisken of diziAdi){
 //
 Döngü içi
 } 
 -->
+    <script>
 
-
-
-
-<script>
-
-    //for in ve for of un farkını görmek için  bir önceki örneğin aynısı üzerinde işlem yapalım
-    const animals = ["fil", "deve", "kuş", "inek", "kedi"];
+        //for in ve for of un farkını görmek için  bir önceki örneğin aynısı üzerinde işlem yapalım
+        const animals = ["fil", "deve", "kuş", "inek", "kedi"];
         //İndeksleri döndürür
         for (let i in animals) {
-            console.log(i,animals[i]);//fil deve kuş inek kedi
+            console.log(i, animals[i]);//fil deve kuş inek kedi
         }
 
         //Dizideki verileri döndürür
-        for (let animal of animals){
+        for (let animal of animals) {
             console.log(animal);
         }
 
         //For of  ile hem indeksleri hem de değerleri elde etmek istersek şu şekilde yazabiliriz
-        for (let [i ,animal] of animals.entries()){
-            console.log(i ,animal);
+        for (let [i, animal] of animals.entries()) {
+            console.log(i, animal);
         }
 
         //Stringlerde for of ile iteration 
 
-        for (let string of "Hello JavaScript"){
+        for (let string of "Hello JavaScript") {
             console.log(string);//Burada strind ismi yerine farklı isimler yazılabilir
         }
 
         //Objelerde kullanımına bakalım
-        const person={
-            name:"Ahmet",
-            surname:"Yılmaz",
-            age:25
+        const person = {
+            name: "Ahmet",
+            surname: "Yılmaz",
+            age: 25
         }
-        for (let a of person ){
+        for (let a of person) {
             console.log(a);
         } //Objelerde Uncaught TypeError: person is not iterable hatası vermektedir
 
-
-</script>
-
-
-
-    
-    
+    </script>
 </body>
+
 </html>

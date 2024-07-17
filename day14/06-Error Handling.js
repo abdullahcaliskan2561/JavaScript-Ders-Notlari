@@ -1,6 +1,3 @@
-
-
-
 const frmLogin = document.querySelector("#frmLogin");
 
 frmLogin.addEventListener("submit", (e) => {
@@ -8,11 +5,6 @@ frmLogin.addEventListener("submit", (e) => {
 
     const txtEmail = document.getElementById("txtEmail");
     const txtPassword = document.getElementById("txtPassword");
-
-
-
-
-
 
     try {
         const email = txtEmail.value;

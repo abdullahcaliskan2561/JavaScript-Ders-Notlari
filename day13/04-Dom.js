@@ -12,10 +12,7 @@ document
         const res = confirm(`${name} isimli kaydi silmek istediginizden emin misiniz?`)
 
         if (res) {
-
         }
-
-
     });
  
 const loadData = () => {

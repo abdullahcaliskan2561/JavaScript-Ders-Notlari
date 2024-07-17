@@ -4,13 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>06-for each practice</title>
 </head>
 
 <body>
-
-
-
     <!--
     FOR OF döngüsüne benzemektedir. Sadece diziler üzerinde çalışır. For of’ tan
 sonra popülerliğini yitirmeye başlamıştır.  -->
@@ -20,13 +17,9 @@ dizi.forEach ( item , index) => {
 //Döngü içi
 }); 
 -->
-
-
-
-
     <script>
-    /*  Örnek çalışma
-        Belirtilen dizinin her bir elamanının 5 katını alarak ayrı bir dizide saklayan uygulamayı forEach () metodu ile yazınız.  */
+        /*  Örnek çalışma
+            Belirtilen dizinin her bir elamanının 5 katını alarak ayrı bir dizide saklayan uygulamayı forEach () metodu ile yazınız.  */
 
         const dizi = [-5, 25, 56, -12];
 
@@ -38,33 +31,27 @@ dizi.forEach ( item , index) => {
         console.log(yeniDizi);
 
 
-
         /* ForEach aslında bir method Bu bir method ama kendisi parametre olarak bir fonksiyon alır.Buraya kadar ilk defa gördük ilerde geniş bir şekilde de göreceğiz  Buna call back denir Kendisi bir fonksiyon ama parametre olarak da bir fonksiyon alır. */
         /* ForEach mevcut dizi içerisinde sadece döner */
 
         //ForEach i call back yaparak kullanma---Fonksiyonun başka bir fonksiyonu parametre olarak alması
-        const animals2=["At","inek","Keçi"]
-       const cb =(animal)=>{
-        console.log(animal);
-       }
-       animals2.forEach(cb);
-
-
-
-
+        const animals2 = ["At", "inek", "Keçi"]
+        const cb = (animal) => {
+            console.log(animal);
+        }
+        animals2.forEach(cb);
 
         //ForEach kısa yol
-        const animals =["Cat","Dog","Cow","Horse","Sheep","Monkey","Rabbit","Lion"];
-        animals.forEach((item,index)=>{  //animals.forEach(()=>{})--Kapalı hali bu şekilde
+        const animals = ["Cat", "Dog", "Cow", "Horse", "Sheep", "Monkey", "Rabbit", "Lion"];
+        animals.forEach((item, index) => {  //animals.forEach(()=>{})--Kapalı hali bu şekilde
             //veya şu şekilde de yazabiliriz
             //animals.forEach((animal,i)=>{//bu sekilde de yazılır;//bunun console yazılışı da 64.satırda
 
         });
         console.log(animals);
-        console.log(i,animal);
+        console.log(i, animal);
 
     </script>
-
 </body>
 
 </html>

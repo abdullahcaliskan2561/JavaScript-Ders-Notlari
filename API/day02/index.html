@@ -29,10 +29,22 @@
 
         <div id="lstCars" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
 
-
         </div>
 
-
+        <!-- 
+            fetch bağlantısı şu şekilde yapılır
+        
+            fetch("api url" , {})--Method,body tanımlaması vs bu köşeli parantezler içerisine yazılır
+            .then (res => res.json() )
+            .then (data => console.log(data) )
+            .catch (err => console.log(err) )
+        
+            1-Fetch e verilecek ilk parametre api urlsidir Yani endpoint adresidir Bu kısımda sunucuya istekte bulunulur
+            2-Fetch ile ilgili ayarları ilk satırdaki köşeli parantez içerisinde yazarız--Headers,method ,body gibi bilgiler
+            3-Gelecek olan response yi yakalayabilmemiz için then kullanırız Promise yapısından dönen olumlu cevapları then de yakalıyoruz çünkü API den dönen cevaplar xml text vb  farklı formatta olabileceği için  biz bu formatı json a çeviriyoruz res =>res.josn() ile 
+            4-Dönen res.json un cevabını yakalayabilmek için bir tane daha then kullanırız Fetch in cevabını ilk then de yakaladık Ve oradan dönen json un cevabını da ikinci then de yakalıyoruz 
+            5-Catch ile hata olursa bu hatalar bu aşamada yakalınır
+        -->
     </main>
 
     <script type="module" src="script.js"></script>

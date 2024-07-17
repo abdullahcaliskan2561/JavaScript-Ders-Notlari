@@ -4,17 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>03-Function Practice</title>
 </head>
 
 <body>
-
-
     <!--PRACTICE 
-        Ürün fiyatı, kdv oranı ve indirim oranı parametre olarak alıp son fiyatı hesaplayan fonksiyonu arrow function ile yazınız. Ürün fiyatı 1500 üzerinde ise extra 10% indirim uygulanacaktır. İndirim uygulanmamış ise kdv hesaba katılmayacaktır.
-
-
-     -->
+        Ürün fiyatı, kdv oranı ve indirim oranı parametre olarak alıp son fiyatı hesaplayan fonksiyonu arrow function ile yazınız. Ürün fiyatı 1500 üzerinde ise extra 10% indirim uygulanacaktır. İndirim uygulanmamış ise kdv hesaba katılmayacaktır.   -->
      <label for="">Price</label>
      <input type="number" id="txtPrice"> <br>
      <label for="">Dicount</label>
@@ -23,8 +18,6 @@
      <input type="number" id="txtTax">
      <button onclick="setPrice()">SetPrice</button>
      <p id="result"></p>
-
-
 
     <script>
         //Generic Function ını oluşturalım
@@ -37,23 +30,19 @@
                 if(!taxRate ||isNaN(taxRate)) taxRate=0;  şeklinde de yazabilirdik
                  */
 
-
                 if (price > 1500) discountRate += 10;
                 if (discountRate <= 0) taxRate = 0;
-
 
                 const totalTax = price * taxRate / 100;
                 const totalDiscount = price * discountRate / 100;
                 const total = price + totalTax - totalDiscount;
-                return total;
-
-            
+                return total;            
         }
+
         //Console daki görünüme bakalım
 
         const priceTotal = getPrice(1000, 25, 18);  //930
         console.log(priceTotal);
-
 
         //Bir event a atayalım
 
@@ -64,14 +53,8 @@
 
              const totalPrice =getPrice(inputPrice, inputDiscount, inputTax);
              document.getElementById(`result`).innerText = totalPrice;
-
          } 
 
-
-
-
     </script>
-
 </body>
-
 </html>

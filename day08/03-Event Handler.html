@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>03-Event Handler</title>
 </head>
 
 <body>
-
     <!-- Bir programda olabilecek olayların yakalanması ve olay gerçekleştiğinde istenilen
 kodların çalıştırılması işlemine event handling , bu işlemi yapan kodlara da event
 handler denir. -->
@@ -23,15 +22,12 @@ handler denir. -->
     --- >Hello
 
  -->
-
-
     <button id="btnDeneme" onclick="sayHello()">Say Hello</button>
     <button id="btnDeneme2">Say Hello2</button>
     <button id="btnDeneme3">Say Hello3</button>
     <button id="btnDeneme4">Say Hello4</button>
     <button id="btnDeneme4un2si">Say Hello4un2si</button>
     <button id="btnDeneme4un3su">Say Hello4un3su</button>
-
 
     <Script>
 
@@ -52,9 +48,6 @@ handler denir. -->
             alert("Hello 1. yöntem");
         }
 
-
-
-
         /*      2.Yöntem----Elemente verilen id üzerinden tanımlama
 
         <button id="btnMsg">Tıkla</button> 
@@ -74,7 +67,6 @@ handler denir. -->
         document.querySelector("#btnDeneme2").onclick = sayHello2;/* Burada önemli bir başka nokta da sayHello2() şeklinde yazmıyoruz Sadece sayHello2 olarak yazıyoruz Eğer sayHello2() şeklinde yazarsak biz butona basmadan hemen çalışır ve ekranda sonucu görürüz */
 
 
-
         /*     3.Yöntem 
         3.yöntem aslında 2. yöntemdeki kodların birleştirilerek kullanılması halidir
 
@@ -88,9 +80,6 @@ handler denir. -->
         document.querySelector("#btnDeneme3").onclick = function (e) {
             alert("Hello 3. yöntem")
         }
-
-
-
 
         /* 4.yöntem
         4.yöntem de yine kısaltılmış bir yöntemdir
@@ -117,23 +106,8 @@ handler denir. -->
         }
         document.querySelector("#btnDeneme4un3su").addEventListener("click", sayHello);
 
-
-
         //NOT--->Parantez içlerine yazıla e harfi meydana gelen olayın nerede olduğunu olayla ilgili bilgileri içeren bir obje  oluşturur Ve biz bu e yi kullanarak olaylay ilgili bilgilere ulaşabiliriz Yani parantez içerisinde e yazılması daha iyi olur
 
-
-
-
-
-
-
-
-
-
-
     </Script>
-
-
 </body>
-
 </html>

@@ -3,21 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>06-Ternary</title>
 </head>
 <body>
-
     <!-- Mantıksal_ifade ? doğruysa :yanlışsa -->
     
-
     <!-- if else bloğunun tek satırda basit bir şekilde yazılmasıdır -->
 
-   <!--  Şekildeki gibi form oluşturunuz.
-    Çalışan seçildiğinde %5, emekli
-    ise %10 kesinti uygulayarak maaşı
-    gösteriniz. Bunu ternary
+   <!--  Şekildeki gibi form oluşturunuz. Çalışan seçildiğinde %5, emekli ise %10 kesinti uygulayarak maaşı gösteriniz. Bunu ternary
     kullanarak yapınız. -->
-    
     
 
     <input type="number" id="txtSalary" oninput="setSalary()">
@@ -28,10 +22,7 @@
      <input type="radio" name="status" id="rdEmployee" onchange="setSalary()" value="employee">
      <label for="rdEmployee">Çalışan</label>
 
-     <h2 id="result"></h2>
-
-
-   
+     <h2 id="resul"></h2>
 
     <script>
 
@@ -39,7 +30,6 @@
         const resultEl= document.querySelector("#result");
         // const status = document.querySelector('input[name="status"]:checked')- - Bu kodu function içerisine aldık
         
-
         function setSalary(){
             const status = document.querySelector('input[name="status"]:checked');/* inputta name i status olup checked edilmiş olanı seç Yani hangi radio butonu seçili ise onun seçmiş olacak- - Bu kısmı normelde function dışarısında global de tanımlamıştık ancak  sayfa ilk açıldığında henüz emekli veya çalışan seçilmediği için bunların checked edilmiş olanını alamaz ancak seçim yapıldıktan sonra checked kontrolünü sağlayabilir Bunu sağlamak için  bu seçim function içerisine alındı */
 
@@ -47,13 +37,8 @@
            salary=status.value==="retired" ? salary*0.9 : salary*0.95 ;
            resultEl.innerHTML=salary.toFixed(2);
 
+        } 
 
-
-        }
-
-
-    
-    
     </script>
 </body>
 </html>

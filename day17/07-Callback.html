@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>07-Callback</title>
 </head>
 <body>
-
-
-    <script>
+  <script>
 
         const siparisVer = (cb) => {
             console.log("Sipariş verildi");
@@ -16,12 +14,8 @@
                 console.log("Sipariş hazırlandı")
                 cb("Lahmacun");
             },4000)
-            
-
         }
-        
-
-        console.log("Avm ye gittik");
+       console.log("Avm ye gittik");
         console.log("Bowling oynadık");
         console.log("Karnımız acıktı");
         siparisVer((siparis)=>{
@@ -30,7 +24,6 @@
         });  
         console.log("Ayakkkabı bakmaya gittik");
     </script>
-
-    
+   
 </body>
 </html>
